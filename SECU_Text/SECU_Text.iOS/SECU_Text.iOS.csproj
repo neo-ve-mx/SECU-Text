@@ -139,4 +139,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\login_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\logo_splash.png" />
+  </ItemGroup>
 </Project>

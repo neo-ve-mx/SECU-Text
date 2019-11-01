@@ -1,20 +1,40 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace SECU_Text.ViewModels
 {
-    public class LoginViewModel
+    public class LoginViewModel : BaseViewModel
     {
+        #region Atributes
+        private string user;
+        private string password;
+        private bool isrunning;
+        private bool isenabled;
+        #endregion
+
         #region Properties
-        public string User { get; set; }
-        public string Password { get; set; }
-        public bool IsRunning { get; set; }
-        public bool IsEnabled { get; set; }
+        public string User 
+        {
+            get { return user; }
+            set { SetValue(ref user, value); }
+        }
+        public string Password 
+        {
+            get { return password; }
+            set { SetValue(ref password, value); }
+        }
+        public bool IsRunning 
+        {
+            get { return isrunning; }
+            set { SetValue(ref isrunning, value); }
+        }
+        public bool IsEnabled 
+        {
+            get { return isenabled; }
+            set { SetValue(ref isenabled, value); }
+        }
         #endregion
 
         #region Constructores
