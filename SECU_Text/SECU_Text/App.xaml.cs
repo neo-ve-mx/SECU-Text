@@ -10,7 +10,19 @@ namespace SECU_Text
         public App()
         {
             InitializeComponent();
-            MainPage = new NavigationPage(new LoginPage());
+            // ELIMINAR LUEGO
+            bool userRegistred = true;
+            // ELIMINAR LUEGO
+
+            if (userRegistred)
+            {
+                MainPage = new NavigationPage(new LoginPage());
+            }
+            else
+            {
+                MainPage = new NavigationPage(new RegisterPage());
+            }
+
             //MainPage = new MainPage();
         }
 

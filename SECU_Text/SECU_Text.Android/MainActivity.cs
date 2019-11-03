@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Content;
 
 namespace SECU_Text.Droid
 {
@@ -30,6 +31,23 @@ namespace SECU_Text.Droid
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
+        public override void OnBackPressed()
+        {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+            AlertDialog alert = dialog.Create();
+            alert.SetTitle("CERRAR");
+            alert.SetMessage("Deseas salir de la aplicación?");
+            alert.SetButton("NO", (c, ev) =>
+            {
+
+            });
+            alert.SetButton2("SI", (c, ev) =>
+            {
+                Finish();
+            });
+            alert.Show();
         }
     }
 }

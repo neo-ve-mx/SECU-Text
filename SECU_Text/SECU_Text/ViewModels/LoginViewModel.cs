@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using SECU_Text.Views;
 using System.Threading;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -76,40 +77,30 @@ namespace SECU_Text.ViewModels
                 return;
             }
 
-            this.IsRunning = true;
+            //this.IsRunning = true;
             this.IsEnabled = false;
+            //Thread.Sleep(5000);
 
-            Thread.Sleep(4000);
+            if (string.CompareOrdinal(this.User, "NEOVEMX") != 0 || string.CompareOrdinal(this.Password, "n30v3mx") != 0)
+            {
+                //this.IsRunning = false;
+                //this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Usuario y/o clave inválidas.",
+                    "Aceptar");
+                this.User = string.Empty;
+                this.Password = string.Empty;
+                return;
+            }
 
-            this.IsRunning = false;
             this.IsEnabled = true;
 
-            //if (string.CompareOrdinal(this.Usuario, "ADMINISTRADOR") != 0 || string.CompareOrdinal(this.Clave, "Accusys123*") != 0)
-            //{
-            //    this.IsRunning = false;
-            //    this.IsEnabled = true;
-            //    await Application.Current.MainPage.DisplayAlert(
-            //        "Error",
-            //        "Usuario y/o clave inválidas.",
-            //        "Aceptar");
-            //    this.Usuario = string.Empty;
-            //    this.Clave = string.Empty;
-            //    return;
-            //}
+            this.User = string.Empty;
+            this.Password = string.Empty;
 
-            //this.IsRunning = false;
-            //this.IsEnabled = true;
-            ////await Application.Current.MainPage.DisplayAlert(
-            ////    "Correcto",
-            ////    "Acceso concedido.",
-            ////    "Aceptar");
-            ////return;
-
-            //this.Usuario = string.Empty;
-            //this.Clave = string.Empty;
-
-            //MainViewModel.ObtenerInstancia().Inicio = new InicioViewModel();
-            //await Application.Current.MainPage.Navigation.PushAsync(new InicioPage());
+            MainViewModel.GetInstance().Home = new HomeViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
         }
         #endregion
     }

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SECU_Text.Views.RegisterPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Registro">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Register}">
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout Padding="140,0">
+                    <Image Source="register_icon.png"></Image>
+                </StackLayout>
+                <StackLayout Padding="50">
+                    <Entry HorizontalTextAlignment="Center" Placeholder="Usuario" Text="{Binding User, Mode=TwoWay}"></Entry>
+                    <Entry HorizontalTextAlignment="Center" Placeholder="Clave" IsPassword="True" Text="{Binding Password, Mode=TwoWay}"></Entry>
+                    <ActivityIndicator IsRunning="{Binding IsRunning, Mode=TwoWay}" IsVisible="True" IsEnabled="True" Color="#6ED228"></ActivityIndicator>
+                    <Button 
+                        Command="{Binding RegisterCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        CornerRadius="23"
+                        HeightRequest="46"
+                        BackgroundColor="#6ED228"
+                        Text="Registrar"
+                        TextColor="White"
+                        FontAttributes="Bold">
+                    </Button>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="SECU-Text | NeoSoft © 2019" HorizontalTextAlignment="Center"></Label>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

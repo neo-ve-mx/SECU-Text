@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SECU_Text.Views.HomePageDetail"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="SECU-Text">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem BindingContext="{Binding Home}" Text="Agregar Entrada"  Icon="add_icon.png" Command="{Binding NewItemCommand}" />
+    </ContentPage.ToolbarItems>
+    <StackLayout Padding="10">
+        <ListView>
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type x:String }">
+                    <x:String>BANCO MERCANTIL HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</x:String>
+                    <x:String>BANCO DEL TESORO</x:String>
+                    <x:String>BANCO BOD</x:String>
+                    <x:String>BANCO DE VENEZUELA</x:String>
+                    <x:String>BANCO MERCANTIL</x:String>
+                    <x:String>BANCO DEL TESORO</x:String>
+                    <x:String>BANCO BOD</x:String>
+                    <x:String>BANCO DE VENEZUELA</x:String>
+                    <x:String>BANCO MERCANTIL</x:String>
+                    <x:String>BANCO DEL TESORO</x:String>
+                    <x:String>BANCO BOD</x:String>
+                    <x:String>BANCO DE VENEZUELA</x:String>
+                    <x:String>BANCO MERCANTIL</x:String>
+                    <x:String>BANCO DEL TESORO</x:String>
+                    <x:String>BANCO BOD</x:String>
+                    <x:String>BANCO DE VENEZUELA</x:String>
+                    <x:String>BANCO MERCANTIL</x:String>
+                    <x:String>BANCO DEL TESORO</x:String>
+                    <x:String>BANCO BOD</x:String>
+                    <x:String>BANCO DE VENEZUELA</x:String>
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="10,10,15,10" Spacing="20">
+                                <Image Source="bank_item" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                                <Label
+                                    LineBreakMode="TailTruncation"
+                                    Text="{Binding .}"
+                                    FontSize="Small" 
+                                    VerticalOptions="Center"
+                                    HorizontalOptions="FillAndExpand"
+                                    TextColor="Black" />
+                                <Image Source="view_item" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
