@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\iOSSQLitePlatform.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,6 +129,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
+    <ProjectReference Include="..\SECU_Text.Android\SECU_Text.Android.csproj">
+      <Project>{DD84029B-6E50-4F70-9E74-3D0EC232740C}</Project>
+      <Name>SECU_Text.Android</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SECU_Text\SECU_Text.csproj">
       <Project>{516E2D5B-A597-4EB8-BDB6-FB094941B272}</Project>
       <Name>SECU_Text</Name>
@@ -192,5 +197,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\exit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\picture.png" />
   </ItemGroup>
 </Project>

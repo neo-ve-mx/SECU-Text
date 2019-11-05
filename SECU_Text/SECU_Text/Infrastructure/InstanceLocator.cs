@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SECU_Text.ViewModels;
+﻿using SECU_Text.ViewModels;
 
 namespace SECU_Text.Infrastructure
 {

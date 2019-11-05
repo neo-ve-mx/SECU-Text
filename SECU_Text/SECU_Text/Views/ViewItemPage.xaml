@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SECU_Text.Views.ViewItemPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Detalle de la Entrada">
+    <ContentPage.Content>
+        <StackLayout BindingContext="{Binding ViewItem}" Padding="30">
+            <StackLayout Padding="0,0,0,30">
+                <Label Text="Tipo de entrada:" FontSize="Large" TextColor="#FF6ED228" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding IconTitle, Mode=TwoWay}" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" />
+                    <Image Source="{Binding Icon}" VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Padding="0,0,0,30">
+                <Label Text="Título de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
+                <Label Text="{Binding Title, Mode=TwoWay}" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout>
+                <Label Text="Datos de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
+                <ScrollView>
+                    <Label Text="{Binding Content, Mode=TwoWay}" FontSize="Medium" FontAttributes="Bold" />
+                </ScrollView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

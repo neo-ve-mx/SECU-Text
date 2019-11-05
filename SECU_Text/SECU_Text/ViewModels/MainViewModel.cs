@@ -1,6 +1,10 @@
-﻿using System;
+﻿using SECU_Text.Models;
+using SECU_Text.Services;
+using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace SECU_Text.ViewModels
 {
@@ -8,21 +12,48 @@ namespace SECU_Text.ViewModels
     {
         #region ViewModels
         public LoginViewModel Login { get; set; }
-
         public RegisterViewModel Register { get; set; }
-
-        public HomeViewModel Home { get; set; }
+        public HomePageViewModel HomePage { get; set; }
+        public HomePageMasterViewModel HomePageMaster { get; set; }
+        public HomePageDetailViewModel HomePageDetail { get; set; }
         public AddItemViewModel AddItem { get; set; }
+        public ViewItemViewModel ViewItem { get; set; }
         #endregion
 
         #region Constructors
         public MainViewModel()
         {
+            var platform = DependencyService.Get<ISQLitePlatform>();
+            SQLiteConnection db = platform.GetConnection();
+
+            try
+            {
+                #region Verify Tables
+                var resultTitem = db.GetTableInfo("T_Entry");
+                if (resultTitem.Count == 0)
+                {
+                    db.CreateTable<T_Entry>();
+                }
+                var resultTappuser = db.GetTableInfo("T_Appuser");
+                if (resultTappuser.Count == 0)
+                {
+                    db.CreateTable<T_Appuser>();
+                }
+                #endregion
+            }
+            catch (SQLiteException sqlex)
+            {
+                Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+            }
+
             instance = this;
             this.Login = new LoginViewModel();
             this.Register = new RegisterViewModel();
-            this.Home = new HomeViewModel();
+            this.HomePage = new HomePageViewModel();
+            this.HomePageMaster = new HomePageMasterViewModel();
+            this.HomePageDetail = new HomePageDetailViewModel();
             this.AddItem = new AddItemViewModel();
+            this.ViewItem = new ViewItemViewModel(new Models.T_Entry());
         }
         #endregion
 

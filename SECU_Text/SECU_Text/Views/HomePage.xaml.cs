@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SECU_Text.Models;
+using SECU_Text.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +17,12 @@ namespace SECU_Text.Views
         public HomePage()
         {
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            
+            MasterPage.ListViewMasterPage.ItemSelected += ListViewMasterPage_ItemSelected;
+            DetailPage.ListViewDetailPage.ItemSelected += ListViewDetailPage_ItemSelected;
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void ListViewMasterPage_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as HomePageMasterMenuItem;
             if (item == null)
@@ -30,7 +34,33 @@ namespace SECU_Text.Views
             Detail = new NavigationPage(page);
             IsPresented = false;
 
-            MasterPage.ListView.SelectedItem = null;
+            MasterPage.ListViewMasterPage.SelectedItem = null;
+        }
+
+        private void ListViewDetailPage_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var item = e.SelectedItem as HomePageDetailEntryItem;
+
+            if (item == null)
+                return;
+
+            T_Entry t_Entry = new T_Entry();
+            t_Entry.Id = item.Id; 
+            t_Entry.Icon = item.Icon; 
+            t_Entry.IconTitle = item.IconTitle; 
+            t_Entry.Title = item.Title;
+            t_Entry.Content = item.Content;
+
+            //var page = (Page)Activator.CreateInstance(item.TargetType);
+            //page.Title = item.Title;
+
+            MainViewModel.GetInstance().ViewItem = new ViewItemViewModel(t_Entry);
+            Application.Current.MainPage.Navigation.PushAsync(new ViewItemPage());
+
+            //Detail = new NavigationPage(page);
+            IsPresented = false;
+
+            DetailPage.ListViewDetailPage.SelectedItem = null;
         }
     }
 }

@@ -8,43 +8,24 @@
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="SECU-Text">
     <ContentPage.ToolbarItems>
-        <ToolbarItem BindingContext="{Binding Home}" Text="Agregar Entrada"  Icon="add_icon.png" Command="{Binding NewItemCommand}" />
+        <ToolbarItem BindingContext="{Binding HomePageDetail}" Text="Agregar Entrada"  Icon="add_icon.png" Command="{Binding NewItemCommand}" />
     </ContentPage.ToolbarItems>
-    <StackLayout Padding="10">
-        <ListView>
-            <ListView.ItemsSource>
-                <x:Array Type="{x:Type x:String }">
-                    <x:String>BANCO MERCANTIL HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH</x:String>
-                    <x:String>BANCO DEL TESORO</x:String>
-                    <x:String>BANCO BOD</x:String>
-                    <x:String>BANCO DE VENEZUELA</x:String>
-                    <x:String>BANCO MERCANTIL</x:String>
-                    <x:String>BANCO DEL TESORO</x:String>
-                    <x:String>BANCO BOD</x:String>
-                    <x:String>BANCO DE VENEZUELA</x:String>
-                    <x:String>BANCO MERCANTIL</x:String>
-                    <x:String>BANCO DEL TESORO</x:String>
-                    <x:String>BANCO BOD</x:String>
-                    <x:String>BANCO DE VENEZUELA</x:String>
-                    <x:String>BANCO MERCANTIL</x:String>
-                    <x:String>BANCO DEL TESORO</x:String>
-                    <x:String>BANCO BOD</x:String>
-                    <x:String>BANCO DE VENEZUELA</x:String>
-                    <x:String>BANCO MERCANTIL</x:String>
-                    <x:String>BANCO DEL TESORO</x:String>
-                    <x:String>BANCO BOD</x:String>
-                    <x:String>BANCO DE VENEZUELA</x:String>
-                </x:Array>
-            </ListView.ItemsSource>
+    <StackLayout Padding="10" BindingContext="{Binding HomePageDetail}">
+        <ListView 
+            x:Name="EntryItemsListView"
+            ItemsSource="{Binding EntryItems}"
+            IsPullToRefreshEnabled="True"
+            RefreshCommand="{Binding RefreshCommand}" 
+            IsRefreshing="{Binding IsRefreshing}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout>
                             <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal" Padding="10,10,15,10" Spacing="20">
-                                <Image Source="bank_item" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
+                                <Image Source="{Binding Icon}" WidthRequest="24" HeightRequest="24" VerticalOptions="Center" />
                                 <Label
                                     LineBreakMode="TailTruncation"
-                                    Text="{Binding .}"
+                                    Text="{Binding Title}"
                                     FontSize="Small" 
                                     VerticalOptions="Center"
                                     HorizontalOptions="FillAndExpand"
@@ -58,3 +39,10 @@
         </ListView>
     </StackLayout>
 </ContentPage>
+
+    
+            <!--RefreshCommand="{Binding RefreshCommand}" 
+            IsRefreshing="{Binding IsRefreshing}" 
+            SelectedItem="{Binding ListViewItemSelected}"
+            ItemTapped="LV_ItemTapped"
+            IsPullToRefreshEnabled="True"--> 

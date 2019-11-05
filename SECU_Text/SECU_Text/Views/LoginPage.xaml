@@ -15,7 +15,6 @@
                     <Image Source="login_icon"></Image>
                 </StackLayout>
                 <StackLayout Padding="50">
-                    <Entry HorizontalTextAlignment="Center" Placeholder="Usuario" Text="{Binding User, Mode=TwoWay}"></Entry>
                     <Entry HorizontalTextAlignment="Center" Placeholder="Clave" IsPassword="True" Text="{Binding Password, Mode=TwoWay}"></Entry>
                     <ActivityIndicator IsRunning="{Binding IsRunning, Mode=TwoWay}" IsVisible="True" IsEnabled="True" Color="#6ED228"></ActivityIndicator>
                     <Button 

@@ -5,8 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.HomePageMaster"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Menu">
-    <StackLayout>
+    <StackLayout BindingContext="{Binding HomePageMaster}">
         <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"
               HasUnevenRows="true"

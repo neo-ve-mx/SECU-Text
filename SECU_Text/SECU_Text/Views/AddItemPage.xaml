@@ -30,12 +30,12 @@
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Título de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
-                    <Entry Placeholder="Ingrese texto aquí..." HorizontalOptions="FillAndExpand" Text="{Binding TitleItem, Mode=TwoWay}"  />
+                    <Entry Placeholder="Ingrese texto aquí..." HorizontalOptions="FillAndExpand" Text="{Binding TitleItem, Mode=TwoWay}" MaxLength="100" />
                 </StackLayout>
                 <StackLayout>
                     <Label Text="Datos de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
                     <ScrollView>
-                        <Editor Placeholder="Ingrese texto aquí..." AutoSize="TextChanges" Text="{Binding ContentItem, Mode=TwoWay}" />
+                        <Editor Placeholder="Ingrese texto aquí..." AutoSize="TextChanges" Text="{Binding ContentItem, Mode=TwoWay}" MaxLength="800" />
                     </ScrollView>
                 </StackLayout>
             </StackLayout>

@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace SECU_Text.Views
+namespace SECU_Text.Models
 {
-
-    public class HomePageMasterMenuItem
+    public class HomePageDetailEntryItem
     {
-        public HomePageMasterMenuItem()
+        public HomePageDetailEntryItem()
         {
-            TargetType = typeof(HomePageMasterMenuItem);
+            TargetType = typeof(HomePageDetailEntryItem);
         }
         public int Id { get; set; }
         public string Icon { get; set; }
+        public string IconTitle { get; set; }
         public string Title { get; set; }
-
+        public string Content { get; set; }
         public Type TargetType { get; set; }
     }
 }

@@ -1,5 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using SECU_Text.Models;
+using SECU_Text.Services;
 using SECU_Text.Views;
+using SQLite;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows.Input;
@@ -10,6 +13,7 @@ namespace SECU_Text.ViewModels
     public class AddItemViewModel : BaseViewModel
     {
         #region Atributes
+        private SQLiteConnection db;
         private ItemType typeitem;
         private int typeitemindex;
         private string titleitem;
@@ -46,6 +50,9 @@ namespace SECU_Text.ViewModels
         #region Constructores
         public AddItemViewModel()
         {
+            var platform = DependencyService.Get<ISQLitePlatform>();
+            db = platform.GetConnection();
+
             #region List Types Items
             ItemType itemType;
             List<ItemType> itemTypes = new List<ItemType>();
@@ -65,10 +72,9 @@ namespace SECU_Text.ViewModels
             itemType.iconType = "card_item";
             itemType.nameType = "Tarjetas de Pago";
             itemTypes.Add(itemType);
-            #endregion
-
             TypesList = itemTypes;
             TypeItemIndex = -1;
+            #endregion
         }
         #endregion
 
@@ -109,6 +115,35 @@ namespace SECU_Text.ViewModels
                     "Aceptar");
                 return;
             }
+
+            bool result = await Application.Current.MainPage.DisplayAlert("SECU-Text", "Desea agregar la nueva entrada?", "Si", "No");
+            if (result)
+            {
+                try
+                {
+                    var registerData = new T_Entry { Icon = TypeItem.iconType, IconTitle = TypeItem.nameType, Title = TitleItem, Content = Base64Encode(ContentItem) };
+                    var resultDB = db.Insert(registerData);
+                    if (resultDB == 1)
+                    {
+                        TypeItemIndex = -1;
+                        TitleItem = string.Empty;
+                        ContentItem = string.Empty;
+
+                        MainViewModel.GetInstance().HomePageDetail = new HomePageDetailViewModel();
+                        await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert("ERROR", "No se pudo crear la clave.", "Aceptar");
+                        return;
+                    }
+                }
+                catch (SQLiteException sqlex)
+                {
+                    await Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                    return;
+                }
+            }
         }
 
         public ICommand CloseCommand
@@ -126,13 +161,13 @@ namespace SECU_Text.ViewModels
                 bool result = await Application.Current.MainPage.DisplayAlert("ALERTA", "Desea cancelar los cambios?", "Si", "No");
                 if (result)
                 {
-                    MainViewModel.GetInstance().AddItem = new AddItemViewModel();
+                    MainViewModel.GetInstance().HomePage = new HomePageViewModel();
                     await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
                 }
             }
             else
             {
-                MainViewModel.GetInstance().AddItem = new AddItemViewModel();
+                MainViewModel.GetInstance().HomePage = new HomePageViewModel();
                 await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
             }
         }
@@ -143,6 +178,14 @@ namespace SECU_Text.ViewModels
         {
             public string iconType { get; set; }
             public string nameType { get; set; }
+        }
+        #endregion
+
+        #region Helpers
+        private static string Base64Encode(string text)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(text);
+            return System.Convert.ToBase64String(plainTextBytes);
         }
         #endregion
     }

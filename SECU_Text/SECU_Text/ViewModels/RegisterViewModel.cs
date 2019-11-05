@@ -1,5 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using System.Threading;
+using SECU_Text.Models;
+using SECU_Text.Services;
+using SECU_Text.Views;
+using SQLite;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -8,18 +11,13 @@ namespace SECU_Text.ViewModels
     public class RegisterViewModel : BaseViewModel
     {
         #region Atributes
-        private string user;
+        private SQLiteConnection db;
         private string password;
         private bool isrunning;
         private bool isenabled;
         #endregion
 
         #region Properties
-        public string User
-        {
-            get { return user; }
-            set { SetValue(ref user, value); }
-        }
         public string Password
         {
             get { return password; }
@@ -40,6 +38,9 @@ namespace SECU_Text.ViewModels
         #region Constructores
         public RegisterViewModel()
         {
+            var platform = DependencyService.Get<ISQLitePlatform>();
+            db = platform.GetConnection();
+
             this.IsEnabled = true;
         }
         #endregion
@@ -55,15 +56,6 @@ namespace SECU_Text.ViewModels
 
         private async void Register()
         {
-            if (string.IsNullOrEmpty(this.User))
-            {
-                await Application.Current.MainPage.DisplayAlert(
-                    "ERROR",
-                    "Ingrese su usuario.",
-                    "Aceptar");
-                return;
-            }
-
             if (string.IsNullOrEmpty(this.Password))
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -73,40 +65,40 @@ namespace SECU_Text.ViewModels
                 return;
             }
 
-            this.IsRunning = true;
+            //this.IsRunning = true;
             this.IsEnabled = false;
 
-            Thread.Sleep(4000);
+            try
+            {
+                var registerData = new T_Appuser { Name = "ApplicationUser", Password = Base64Encode(Password) };
+                var resultDB = db.Insert(registerData);
+                if (resultDB == 1)
+                {
+                    //this.IsRunning = false;
+                    Password = string.Empty;
+                    this.IsEnabled = true;
+                    MainViewModel.GetInstance().Register = new RegisterViewModel();
+                    await Application.Current.MainPage.Navigation.PushAsync(new LoginPage());
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("ERROR", "No se pudo crear la clave.", "Aceptar");
+                    return;
+                }
+            }
+            catch (SQLiteException sqlex)
+            {
+                await Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                return;
+            }
+        }
+        #endregion
 
-            this.IsRunning = false;
-            this.IsEnabled = true;
-
-            //if (string.CompareOrdinal(this.Usuario, "ADMINISTRADOR") != 0 || string.CompareOrdinal(this.Clave, "Accusys123*") != 0)
-            //{
-            //    this.IsRunning = false;
-            //    this.IsEnabled = true;
-            //    await Application.Current.MainPage.DisplayAlert(
-            //        "Error",
-            //        "Usuario y/o clave inválidas.",
-            //        "Aceptar");
-            //    this.Usuario = string.Empty;
-            //    this.Clave = string.Empty;
-            //    return;
-            //}
-
-            //this.IsRunning = false;
-            //this.IsEnabled = true;
-            ////await Application.Current.MainPage.DisplayAlert(
-            ////    "Correcto",
-            ////    "Acceso concedido.",
-            ////    "Aceptar");
-            ////return;
-
-            //this.Usuario = string.Empty;
-            //this.Clave = string.Empty;
-
-            //MainViewModel.ObtenerInstancia().Inicio = new InicioViewModel();
-            //await Application.Current.MainPage.Navigation.PushAsync(new InicioPage());
+        #region Helpers
+        private static string Base64Encode(string text)
+        {
+            var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(text);
+            return System.Convert.ToBase64String(plainTextBytes);
         }
         #endregion
     }
