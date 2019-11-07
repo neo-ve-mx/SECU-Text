@@ -22,6 +22,8 @@ namespace SECU_Text.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            UINavigationBar.Appearance.TintColor = UIColor.FromRGB(110, 210, 40);
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

@@ -121,7 +121,7 @@ namespace SECU_Text.ViewModels
             {
                 try
                 {
-                    var registerData = new T_Entry { Icon = TypeItem.iconType, IconTitle = TypeItem.nameType, Title = TitleItem, Content = Base64Encode(ContentItem) };
+                    var registerData = new T_Entry { Icon = TypeItem.iconType, IconTitle = TypeItem.nameType, IconIndex = TypeItemIndex, Title = TitleItem, Content = Base64Encode(ContentItem) };
                     var resultDB = db.Insert(registerData);
                     if (resultDB == 1)
                     {
@@ -134,7 +134,7 @@ namespace SECU_Text.ViewModels
                     }
                     else
                     {
-                        await Application.Current.MainPage.DisplayAlert("ERROR", "No se pudo crear la clave.", "Aceptar");
+                        await Application.Current.MainPage.DisplayAlert("ERROR", "No se pudo crear la entrada.", "Aceptar");
                         return;
                     }
                 }

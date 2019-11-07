@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SECU_Text.Views.EditItemPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Editar Entrada">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem BindingContext="{Binding EditItem}" Text="Guardar Entrada"  Icon="save_icon" Command="{Binding SaveCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" Padding="0,30" BindingContext="{Binding EditItem}">
+            <StackLayout Padding="140,0">
+                <Image Source="additem_icon"></Image>
+            </StackLayout>
+            <StackLayout Padding="20">
+                <StackLayout>
+                    <Label Text="Tipo de entrada:" FontSize="Large" TextColor="#FF6ED228"/>
+                    <Picker 
+                        x:Name="TypeItemName" 
+                        Title="Seleccione..." 
+                        ItemsSource="{Binding TypesList}" 
+                        ItemDisplayBinding="{Binding nameType}" 
+                        SelectedItem="{Binding TypeItem, Mode=TwoWay}" 
+                        SelectedIndex="{Binding TypeItemIndex, Mode=TwoWay}"
+                        FontSize="Medium"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Título de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
+                    <Entry Placeholder="Ingrese texto aquí..." HorizontalOptions="FillAndExpand" Text="{Binding TitleItem, Mode=TwoWay}" MaxLength="100" FontSize="Medium" />
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Datos de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
+                    <ScrollView>
+                        <Editor Placeholder="Ingrese texto aquí..." AutoSize="TextChanges" Text="{Binding ContentItem, Mode=TwoWay}" MaxLength="800" FontSize="Medium" />
+                    </ScrollView>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

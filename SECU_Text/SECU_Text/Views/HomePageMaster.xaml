@@ -23,12 +23,12 @@
             <ListView.Header>
                 <Grid BackgroundColor="#6ED228">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="80" />
+                        <RowDefinition Height="120" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid>
                         <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-                            <Image Source="logo_vertical" />
+                            <Image Source="logo_vertical" WidthRequest="200" />
                         </StackLayout>
                     </Grid>
                 </Grid>

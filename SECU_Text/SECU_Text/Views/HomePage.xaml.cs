@@ -47,7 +47,8 @@ namespace SECU_Text.Views
             T_Entry t_Entry = new T_Entry();
             t_Entry.Id = item.Id; 
             t_Entry.Icon = item.Icon; 
-            t_Entry.IconTitle = item.IconTitle; 
+            t_Entry.IconTitle = item.IconTitle;
+            t_Entry.IconIndex = item.IconIndex;
             t_Entry.Title = item.Title;
             t_Entry.Content = item.Content;
 

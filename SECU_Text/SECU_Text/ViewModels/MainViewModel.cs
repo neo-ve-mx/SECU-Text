@@ -18,6 +18,7 @@ namespace SECU_Text.ViewModels
         public HomePageDetailViewModel HomePageDetail { get; set; }
         public AddItemViewModel AddItem { get; set; }
         public ViewItemViewModel ViewItem { get; set; }
+        public EditItemViewModel EditItem { get; set; }
         #endregion
 
         #region Constructors
@@ -54,6 +55,7 @@ namespace SECU_Text.ViewModels
             this.HomePageDetail = new HomePageDetailViewModel();
             this.AddItem = new AddItemViewModel();
             this.ViewItem = new ViewItemViewModel(new Models.T_Entry());
+            this.EditItem = new EditItemViewModel(new Models.T_Entry());
         }
         #endregion
 

@@ -13,6 +13,7 @@ namespace SECU_Text.Models
         public int Id { get; set; }
         public string Icon { get; set; }
         public string IconTitle { get; set; }
+        public int IconIndex { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
         public Type TargetType { get; set; }

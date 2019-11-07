@@ -54,6 +54,7 @@ namespace SECU_Text.ViewModels
                     homePageDetailEntryItem.Id = entry.Id;
                     homePageDetailEntryItem.Icon = entry.Icon;
                     homePageDetailEntryItem.IconTitle = entry.IconTitle;
+                    homePageDetailEntryItem.IconIndex = entry.IconIndex;
                     homePageDetailEntryItem.Title = entry.Title;
                     homePageDetailEntryItem.Content = entry.Content;
                     homePageDetailEntryItem.TargetType = typeof(ViewItemPage);
@@ -102,6 +103,7 @@ namespace SECU_Text.ViewModels
                         homePageDetailEntryItem.Id = entry.Id;
                         homePageDetailEntryItem.Icon = entry.Icon;
                         homePageDetailEntryItem.IconTitle = entry.IconTitle;
+                        homePageDetailEntryItem.IconIndex = entry.IconIndex;
                         homePageDetailEntryItem.Title = entry.Title;
                         homePageDetailEntryItem.Content = entry.Content;
                         homePageDetailEntryItem.TargetType = typeof(ViewItemPage);

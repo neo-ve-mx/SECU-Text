@@ -59,7 +59,7 @@
                     <StackLayout Padding="0,20,0,0">
                         <Image Source="picture" WidthRequest="150" />
                     </StackLayout>
-                    <Label HorizontalTextAlignment="Center" FontSize="Large" FontAttributes="Italic">
+                    <Label HorizontalTextAlignment="Center" FontSize="40" FontAttributes="Italic">
                         <Label.FontFamily>
                             <OnPlatform x:TypeArguments="x:String">
                                 <On Platform="iOS" Value="AlexBrush-Regular" />
@@ -70,7 +70,7 @@
                             <FormattedString>
                                 <FormattedString.Spans>
                                     <Span Text="Dedicada a mi hija Valentina, " />
-                                    <Span Text="te amo hija =)" />
+                                    <Span Text="te amo hija..." />
                                 </FormattedString.Spans>
                             </FormattedString>
                         </Label.FormattedText>

@@ -6,24 +6,69 @@
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.ViewItemPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Detalle de la Entrada">
+             Title="Entrada">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            BindingContext="{Binding ViewItem}" 
+            Text="Copiar Entrada"  
+            Icon="copy_icon" 
+            Command="{Binding CopyCommand}" />
+        <ToolbarItem 
+            BindingContext="{Binding ViewItem}" 
+            Text="Editar Entrada"  
+            Icon="edit_icon" 
+            Command="{Binding EditCommand}" />
+        <ToolbarItem 
+            BindingContext="{Binding ViewItem}" 
+            Text="Eliminar Entrada" 
+            Icon="delete_icon" 
+            Command="{Binding DeleteCommand}" />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding ViewItem}" Padding="30">
+        <StackLayout BindingContext="{Binding ViewItem}" Padding="10" HorizontalOptions="FillAndExpand">
             <StackLayout Padding="0,0,0,30">
-                <Label Text="Tipo de entrada:" FontSize="Large" TextColor="#FF6ED228" />
-                <StackLayout Orientation="Horizontal">
-                    <Label Text="{Binding IconTitle, Mode=TwoWay}" FontSize="Medium" FontAttributes="Bold" VerticalOptions="Center" />
-                    <Image Source="{Binding Icon}" VerticalOptions="Center" />
+                <Label 
+                    Text="Tipo de entrada:" 
+                    FontSize="Large" 
+                    TextColor="#FF6ED228" 
+                    HorizontalOptions="FillAndExpand" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <Label 
+                        Text="{Binding IconTitle, Mode=TwoWay}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold" 
+                        VerticalOptions="Center" />
+                    <StackLayout Padding="80,0,0,0">
+                        <Image
+                            Source="{Binding Icon}" 
+                            VerticalOptions="Center" />
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
-            <StackLayout Padding="0,0,0,30">
-                <Label Text="Título de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
-                <Label Text="{Binding Title, Mode=TwoWay}" FontSize="Medium" FontAttributes="Bold" />
+            <StackLayout Padding="0,0,0,30" HorizontalOptions="FillAndExpand">
+                <Label 
+                    Text="Título de la entrada:" 
+                    FontSize="Large" 
+                    TextColor="#FF6ED228" 
+                    HorizontalOptions="FillAndExpand" />
+                <Label 
+                    Text="{Binding Title, Mode=TwoWay}" 
+                    FontSize="Medium" 
+                    FontAttributes="Bold" 
+                    HorizontalOptions="FillAndExpand" />
             </StackLayout>
-            <StackLayout>
-                <Label Text="Datos de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
+            <StackLayout HorizontalOptions="FillAndExpand">
+                <Label 
+                    Text="Datos de la entrada:" 
+                    FontSize="Large" 
+                    TextColor="#FF6ED228" 
+                    HorizontalOptions="FillAndExpand" />
                 <ScrollView>
-                    <Label Text="{Binding Content, Mode=TwoWay}" FontSize="Medium" FontAttributes="Bold" />
+                    <Label 
+                        Text="{Binding Content, Mode=TwoWay}" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold" 
+                        HorizontalOptions="FillAndExpand" />
                 </ScrollView>
             </StackLayout>
         </StackLayout>

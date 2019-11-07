@@ -25,28 +25,7 @@ namespace SECU_Text
                 {
                     userRegistred = true;
                 }
-                //#region Verify Table T_Item
-                //var resultTitem = db.GetTableInfo("T_Entry");
-                //if (resultTitem.Count == 0)
-                //{
-                //    db.CreateTable<T_Entry>();
-                //}
-                //#endregion
-                //#region Verify Table T_Appuser
-                //var resultTappuser = db.GetTableInfo("T_Appuser");
-                //if (resultTappuser.Count == 0)
-                //{
-                //    db.CreateTable<T_Appuser>();
-                //}
-                //else
-                //{
-                //    IEnumerable<T_Appuser> getAppUser = SELECT_WHERE(db, "ApplicationUser");
-                //    if (getAppUser.ToList<T_Appuser>().Count != 0)
-                //    {
-                //        userRegistred = true;
-                //    }
-                //} 
-                //#endregion
+                
             }
             catch (SQLiteException sqlex)
             {
@@ -62,6 +41,7 @@ namespace SECU_Text
                 MainPage = new NavigationPage(new RegisterPage());
             }
 
+            //MainPage.On<Xamarin.Forms.PlatformConfiguration.Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
             //MainPage = new MainPage();
         }
 

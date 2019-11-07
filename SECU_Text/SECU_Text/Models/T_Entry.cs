@@ -10,6 +10,7 @@ namespace SECU_Text.Models
         public string Icon { get; set; }
         [MaxLength(100)]
         public string IconTitle { get; set; }
+        public int IconIndex { get; set; }
         [MaxLength(100)]
         public string Title { get; set; }
         [MaxLength(800)]
