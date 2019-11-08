@@ -5,8 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.ViewItemPage"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Entrada">
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.ToolbarItems>
         <ToolbarItem 
             BindingContext="{Binding ViewItem}" 
@@ -25,12 +24,15 @@
             Command="{Binding DeleteCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout BindingContext="{Binding ViewItem}" Padding="10" HorizontalOptions="FillAndExpand">
-            <StackLayout Padding="0,0,0,30">
+        <StackLayout 
+            BindingContext="{Binding ViewItem}" 
+            Padding="10" 
+            HorizontalOptions="FillAndExpand">
+            <StackLayout>
                 <Label 
                     Text="Tipo de entrada:" 
                     FontSize="Large" 
-                    TextColor="#FF6ED228" 
+                    TextColor="#3F51B5" 
                     HorizontalOptions="FillAndExpand" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                     <Label 
@@ -38,7 +40,7 @@
                         FontSize="Medium" 
                         FontAttributes="Bold" 
                         VerticalOptions="Center" />
-                    <StackLayout Padding="80,0,0,0">
+                    <StackLayout HorizontalOptions="EndAndExpand">
                         <Image
                             Source="{Binding Icon}" 
                             VerticalOptions="Center" />
@@ -49,7 +51,7 @@
                 <Label 
                     Text="Título de la entrada:" 
                     FontSize="Large" 
-                    TextColor="#FF6ED228" 
+                    TextColor="#3F51B5" 
                     HorizontalOptions="FillAndExpand" />
                 <Label 
                     Text="{Binding Title, Mode=TwoWay}" 
@@ -61,7 +63,7 @@
                 <Label 
                     Text="Datos de la entrada:" 
                     FontSize="Large" 
-                    TextColor="#FF6ED228" 
+                    TextColor="#3F51B5" 
                     HorizontalOptions="FillAndExpand" />
                 <ScrollView>
                     <Label 

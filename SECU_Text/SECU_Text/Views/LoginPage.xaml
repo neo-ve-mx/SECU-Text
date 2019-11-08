@@ -6,30 +6,62 @@
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.LoginPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Login">
+             Title="Ingresar"
+             NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Login}">
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <StackLayout 
+                HorizontalOptions="Center" 
+                VerticalOptions="FillAndExpand"
+                Padding="0,50,0,0">
                 <StackLayout Padding="140,0">
-                    <Image Source="login_icon"></Image>
+                    <Image 
+                        Source="register_icon"
+                        WidthRequest="40"/>
                 </StackLayout>
-                <StackLayout Padding="50">
-                    <Entry HorizontalTextAlignment="Center" Placeholder="Clave" IsPassword="True" Text="{Binding Password, Mode=TwoWay}"></Entry>
-                    <ActivityIndicator IsRunning="{Binding IsRunning, Mode=TwoWay}" IsVisible="True" IsEnabled="True" Color="#6ED228"></ActivityIndicator>
-                    <Button 
-                        Command="{Binding LoginCommand}"
-                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                        CornerRadius="23"
-                        HeightRequest="46"
-                        BackgroundColor="#6ED228"
-                        Text="Ingresar"
-                        TextColor="White"
-                        FontAttributes="Bold">
-                    </Button>
+                <StackLayout 
+                    HorizontalOptions="Center"
+                    Padding="0,20">
+                    <Label
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Text="SecuText bloqueado"/>
                 </StackLayout>
-                <StackLayout>
-                    <Label Text="SECU-Text | NeoSoft © 2019" HorizontalTextAlignment="Center"></Label>
+                <StackLayout VerticalOptions="CenterAndExpand">
+                    <Entry 
+                        HorizontalTextAlignment="Center" 
+                        Placeholder="Clave" 
+                        IsPassword="True" 
+                        Text="{Binding 
+                        Password, Mode=TwoWay}" />
+                    <StackLayout>
+                        <ActivityIndicator 
+                            IsRunning="{Binding IsRunning, Mode=TwoWay}" 
+                            IsVisible="False" 
+                            IsEnabled="True" 
+                            Color="#3F51B5" />
+                    </StackLayout>
+                    <StackLayout Padding="30,20,30,0">
+                        <Button 
+                            Command="{Binding LoginCommand}"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            CornerRadius="23"
+                            HeightRequest="46"
+                            BackgroundColor="#3F51B5"
+                            Text="Ingresar"
+                            TextColor="White"
+                            FontAttributes="Bold">
+                        </Button>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Label 
+                        Text="SECU-Text | NeoSoft © 2019"
+                        HorizontalTextAlignment="Center"
+                        FontSize="Small"
+                        FontAttributes="Bold"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

@@ -5,33 +5,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.AddItemPage"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Agregar Entrada"
-             NavigationPage.HasBackButton="False">
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.ToolbarItems>
         <ToolbarItem 
             BindingContext="{Binding AddItem}" 
             Text="Guardar Entrada"  
             Icon="save_icon" 
             Command="{Binding SaveCommand}" />
-        <ToolbarItem 
-            BindingContext="{Binding AddItem}"
-            Text="Cerrar"  
-            Icon="exit_icon" 
-            Command="{Binding CloseCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" Padding="0,30" BindingContext="{Binding AddItem}">
-            <StackLayout Padding="140,0">
-                <Image 
-                    Source="additem_icon" />
-            </StackLayout>
-            <StackLayout Padding="20">
+        <StackLayout 
+            Padding="10"
+            BindingContext="{Binding AddItem}">
+            <StackLayout>
                 <StackLayout>
                     <Label 
                         Text="Tipo de entrada:" 
                         FontSize="Large" 
-                        TextColor="#FF6ED228"/>
+                        TextColor="#3F51B5"/>
                     <Picker 
                         x:Name="TypeItemName" 
                         Title="Seleccione..." 
@@ -45,7 +36,7 @@
                     <Label 
                         Text="Título de la entrada:" 
                         FontSize="Large" 
-                        TextColor="#FF6ED228"/>
+                        TextColor="#3F51B5"/>
                     <Entry 
                         Placeholder="Ingrese texto aquí..." 
                         HorizontalOptions="FillAndExpand" 
@@ -59,7 +50,7 @@
                     <Label 
                         Text="Datos de la entrada:" 
                         FontSize="Large" 
-                        TextColor="#FF6ED228"/>
+                        TextColor="#3F51B5"/>
                     <ScrollView>
                         <Editor 
                             Placeholder="Ingrese texto aquí..." 

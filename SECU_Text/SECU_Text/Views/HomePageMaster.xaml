@@ -21,13 +21,13 @@
                 </x:Array>
             </d:ListView.ItemsSource>
             <ListView.Header>
-                <Grid BackgroundColor="#6ED228">
+                <Grid BackgroundColor="#3F51B5">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="120" />
+                        <RowDefinition Height="49" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid>
-                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                        <StackLayout Padding="0,2">
                             <Image Source="logo_vertical" WidthRequest="200" />
                         </StackLayout>
                     </Grid>

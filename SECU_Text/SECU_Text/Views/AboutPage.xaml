@@ -12,71 +12,71 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Center" BackgroundColor="#6ED228" Padding="20">
+            <StackLayout 
+                Orientation="Horizontal" 
+                HorizontalOptions="FillAndExpand" 
+                VerticalOptions="Center" 
+                BackgroundColor="#3F51B5" Padding="20">
                 <StackLayout HorizontalOptions="CenterAndExpand">
-                    <Image Source="logo" VerticalOptions="Center" HeightRequest="150"/>
+                    <Image Source="logo_vertical" VerticalOptions="Center" WidthRequest="340"/>
                 </StackLayout>
             </StackLayout>
             <ScrollView Grid.Row="1">
-                <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
-                    <Label FontSize="22" HorizontalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="SECU-Text" FontAttributes="Bold" FontSize="22"/>
-                                    <Span Text=" "/>
-                                    <Span Text=" Ver 1.0" ForegroundColor="#6ED228"/>
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label HorizontalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="Aplicación" />
-                                    <Span Text=" OPEN SOURCE" />
-                                    <Span Text=" 2019 NeoSoft ©" FontAttributes="Bold" />
-                                    <Span Text="." />
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Label HorizontalTextAlignment="Center">
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="Disponible en: " />
-                                    <Span Text=" "/>
-                                    <Span Text="iOS y Android" FontAttributes="Bold" />
-                                    <Span Text=" "/>
-                                    <Span Text=" más recientes." />
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
-                    <Image Source="about_icon" WidthRequest="24"></Image>
-                    <StackLayout Padding="0,20,0,0">
-                        <Image Source="picture" WidthRequest="150" />
+                <StackLayout>
+                    <StackLayout Orientation="Vertical" Padding="16,20,16,40" Spacing="10">
+                        <Label FontSize="22" HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="SECU-Text" FontAttributes="Bold" FontSize="22"/>
+                                        <Span Text=" "/>
+                                        <Span Text=" Ver 1.0" ForegroundColor="#3F51B5"/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Aplicación" />
+                                        <Span Text=" OPEN SOURCE" />
+                                        <Span Text=" 2019 NeoSoft ©" FontAttributes="Bold" />
+                                        <Span Text="." />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Disponible en: " />
+                                        <Span Text=" "/>
+                                        <Span Text="iOS y Android" FontAttributes="Bold" />
+                                        <Span Text=" "/>
+                                        <Span Text=" más recientes." />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
                     </StackLayout>
-                    <Label HorizontalTextAlignment="Center" FontSize="40" FontAttributes="Italic">
-                        <Label.FontFamily>
-                            <OnPlatform x:TypeArguments="x:String">
-                                <On Platform="iOS" Value="AlexBrush-Regular" />
-                                <On Platform="Android" Value="AlexBrush-Regular.ttf#AlexBrush-Regular" />
-                            </OnPlatform>
-                        </Label.FontFamily>
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <FormattedString.Spans>
-                                    <Span Text="Dedicada a mi hija Valentina, " />
-                                    <Span Text="te amo hija..." />
-                                </FormattedString.Spans>
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Label 
+                        Text=".::Dedicada a mi hija Valentina, te amo hija::."
+                        HorizontalTextAlignment="Center"
+                        FontSize="Small"
+                        FontAttributes="Bold"/>
+                    </StackLayout>
                 </StackLayout>
             </ScrollView>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
+
+<!--<Label.FontFamily>
+<OnPlatform x:TypeArguments="x:String">
+<On Platform="iOS" Value="AlexBrush-Regular" />
+<On Platform="Android" Value="AlexBrush-Regular.ttf#AlexBrush-Regular" />
+</OnPlatform>
+</Label.FontFamily>-->

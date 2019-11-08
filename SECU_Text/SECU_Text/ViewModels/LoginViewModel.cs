@@ -47,7 +47,7 @@ namespace SECU_Text.ViewModels
 
             this.IsEnabled = true;
 
-            this.Password = "n30v3mx";
+            //this.Password = "n30v3mx";
         }
         #endregion
 

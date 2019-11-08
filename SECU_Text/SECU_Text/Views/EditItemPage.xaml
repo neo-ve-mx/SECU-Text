@@ -5,19 +5,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.EditItemPage"
-             BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Editar Entrada">
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem BindingContext="{Binding EditItem}" Text="Guardar Entrada"  Icon="save_icon" Command="{Binding SaveCommand}" />
+        <ToolbarItem 
+            BindingContext="{Binding EditItem}" 
+            Text="Guardar Entrada"  
+            Icon="save_icon" 
+            Command="{Binding SaveCommand}" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" Padding="0,30" BindingContext="{Binding EditItem}">
-            <StackLayout Padding="140,0">
-                <Image Source="additem_icon"></Image>
-            </StackLayout>
-            <StackLayout Padding="20">
+        <StackLayout 
+            Padding="10" 
+            BindingContext="{Binding EditItem}">
+            <StackLayout>
                 <StackLayout>
-                    <Label Text="Tipo de entrada:" FontSize="Large" TextColor="#FF6ED228"/>
+                    <Label 
+                        Text="Tipo de entrada:" 
+                        FontSize="Large" 
+                        TextColor="#3F51B5"/>
                     <Picker 
                         x:Name="TypeItemName" 
                         Title="Seleccione..." 
@@ -28,13 +33,29 @@
                         FontSize="Medium"/>
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Título de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
-                    <Entry Placeholder="Ingrese texto aquí..." HorizontalOptions="FillAndExpand" Text="{Binding TitleItem, Mode=TwoWay}" MaxLength="100" FontSize="Medium" />
+                    <Label 
+                        Text="Título de la entrada:" 
+                        FontSize="Large" 
+                        TextColor="#3F51B5"/>
+                    <Entry 
+                        Placeholder="Ingrese texto aquí..." 
+                        HorizontalOptions="FillAndExpand" 
+                        Text="{Binding TitleItem, Mode=TwoWay}" 
+                        MaxLength="100" 
+                        FontSize="Medium" />
                 </StackLayout>
                 <StackLayout>
-                    <Label Text="Datos de la entrada:" FontSize="Large" TextColor="#FF6ED228"/>
+                    <Label 
+                        Text="Datos de la entrada:" 
+                        FontSize="Large" 
+                        TextColor="#3F51B5"/>
                     <ScrollView>
-                        <Editor Placeholder="Ingrese texto aquí..." AutoSize="TextChanges" Text="{Binding ContentItem, Mode=TwoWay}" MaxLength="800" FontSize="Medium" />
+                        <Editor 
+                            Placeholder="Ingrese texto aquí..." 
+                            AutoSize="TextChanges" 
+                            Text="{Binding ContentItem, Mode=TwoWay}" 
+                            MaxLength="800" 
+                            FontSize="Medium" />
                     </ScrollView>
                 </StackLayout>
             </StackLayout>

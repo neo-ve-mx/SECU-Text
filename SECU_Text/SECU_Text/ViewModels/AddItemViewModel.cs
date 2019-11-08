@@ -72,6 +72,10 @@ namespace SECU_Text.ViewModels
             itemType.iconType = "card_item";
             itemType.nameType = "Tarjetas de Pago";
             itemTypes.Add(itemType);
+            itemType = new ItemType();
+            itemType.iconType = "text_item";
+            itemType.nameType = "Nota de Texto";
+            itemTypes.Add(itemType);
             TypesList = itemTypes;
             TypeItemIndex = -1;
             #endregion
