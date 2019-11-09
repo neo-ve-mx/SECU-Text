@@ -4,8 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="SECU_Text.Views.AboutPage"
-             Title="Acerca de SECU-Text">
+             x:Class="SECU_Text.Views.AboutPage">
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -18,7 +17,9 @@
                 VerticalOptions="Center" 
                 BackgroundColor="#3F51B5" Padding="20">
                 <StackLayout HorizontalOptions="CenterAndExpand">
-                    <Image Source="logo_vertical" VerticalOptions="Center" WidthRequest="340"/>
+                    <Image 
+                        Source="logo" 
+                        VerticalOptions="Center"/>
                 </StackLayout>
             </StackLayout>
             <ScrollView Grid.Row="1">
@@ -61,11 +62,44 @@
                             </Label.FormattedText>
                         </Label>
                     </StackLayout>
-                    <StackLayout VerticalOptions="EndAndExpand">
+                    <StackLayout>
+                        <Label HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Aplicación desarrollada por:" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Francisco Palma" FontAttributes="Bold" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="neovemx@hotmail.com" />
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="EndAndExpand" Padding="0,0,0,20">
                         <Label 
                         Text=".::Dedicada a mi hija Valentina, te amo hija::."
                         HorizontalTextAlignment="Center"
-                        FontSize="Small"
+                        FontSize="Medium"
                         FontAttributes="Bold"/>
                     </StackLayout>
                 </StackLayout>

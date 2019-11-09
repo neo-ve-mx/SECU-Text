@@ -5836,31 +5836,28 @@ namespace SECU_Text.Droid
 			public const int phone_item = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int picture = 2131165315;
+			public const int register_icon = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int register_icon = 2131165316;
+			public const int save_icon = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int save_icon = 2131165317;
+			public const int security_icon = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int security_icon = 2131165318;
+			public const int splash_screen = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int splash_screen = 2131165319;
+			public const int text_item = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int text_item = 2131165320;
+			public const int tooltip_frame_dark = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int tooltip_frame_dark = 2131165321;
+			public const int tooltip_frame_light = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int tooltip_frame_light = 2131165322;
-			
-			// aapt resource value: 0x7F07008B
-			public const int view_item = 2131165323;
+			public const int view_item = 2131165322;
 			
 			static Drawable()
 			{
