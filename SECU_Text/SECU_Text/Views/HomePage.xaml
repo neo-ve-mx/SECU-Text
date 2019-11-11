@@ -7,7 +7,7 @@
              x:Class="SECU_Text.Views.HomePage"
              xmlns:pages="clr-namespace:SECU_Text.Views"
              NavigationPage.HasNavigationBar="False">
-  <MasterDetailPage.Master>
+    <MasterDetailPage.Master>
     <pages:HomePageMaster x:Name="MasterPage" />
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>

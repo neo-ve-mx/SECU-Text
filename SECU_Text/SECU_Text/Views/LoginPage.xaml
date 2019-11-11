@@ -31,7 +31,7 @@
                 </StackLayout>
                 <StackLayout 
                     IsVisible="{Binding PasswordIsVisible, Mode=TwoWay}"
-                    VerticalOptions="FillAndExpand">
+                    VerticalOptions="CenterAndExpand">
                     <Entry 
                         HorizontalTextAlignment="Center" 
                         Placeholder="Clave" 
@@ -60,7 +60,7 @@
                 </StackLayout>
                 <StackLayout
                     IsVisible="{Binding FingerPrintIsVisible, Mode=TwoWay}"
-                    VerticalOptions="FillAndExpand">
+                    VerticalOptions="CenterAndExpand">
                     <StackLayout>
                         <Button
                         Command="{Binding FingerCommand}"
@@ -72,13 +72,13 @@
                         Text="Toque la imágen de la huella"
                         HorizontalOptions="Center"/>
                     </StackLayout>
-                    <StackLayout VerticalOptions="EndAndExpand">
-                        <Label 
+                </StackLayout>
+                <StackLayout VerticalOptions="EndAndExpand">
+                    <Label 
                         Text="SECU-Text | NeoSoft © 2019"
                         HorizontalTextAlignment="Center"
                         FontSize="Small"
                         FontAttributes="Bold"/>
-                    </StackLayout>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

@@ -7,6 +7,9 @@
              x:Class="SECU_Text.Views.HomePageMaster"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Menu">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS=" 0 , 20 , 0 , 0" />
+    </ContentPage.Padding>
     <StackLayout BindingContext="{Binding HomePageMaster}">
         <ListView x:Name="MenuItemsListView"
               SeparatorVisibility="None"

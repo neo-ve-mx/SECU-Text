@@ -20,11 +20,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" image="logo_splash.png" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <rect key="frame" x="82.5" y="254.5" width="210" height="158"/>
+                                <rect key="frame" x="79.5" y="225.5" width="216" height="216"/>
                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.42566299439999999" green="0.81797927619999999" blue="0.1517770588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="23" firstAttribute="centerY" secondItem="yd7-JS-zBw" secondAttribute="centerY" id="Xlj-As-fdN"/>
                             <constraint firstItem="23" firstAttribute="centerX" secondItem="yd7-JS-zBw" secondAttribute="centerX" id="etK-oA-3SN"/>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo_splash.png" width="472.5" height="355.5"/>
+        <image name="logo_splash.png" width="108" height="108"/>
     </resources>
 </document>
