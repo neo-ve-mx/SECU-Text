@@ -5,13 +5,83 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.SecurityPage"
-             Title="Seguridad"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
              NavigationPage.HasNavigationBar="True">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView
+            BindingContext="{Binding Security}">
+            <StackLayout>
+                <StackLayout 
+                    Padding="0,60,0,0"
+                    HorizontalOptions="Center">
+                    <StackLayout Padding="140,0">
+                        <Image 
+                            Source="register_icon"
+                            WidthRequest="40"/>
+                    </StackLayout>
+                    <StackLayout 
+                        HorizontalOptions="Center"
+                        Padding="0,20">
+                        <Label
+                            FontSize="Large"
+                            FontAttributes="Bold"
+                            Text="Cambio de clave"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Entry 
+                            HorizontalTextAlignment="Center" 
+                            Placeholder="Clave" 
+                            IsPassword="True" 
+                            Text="{Binding Password, Mode=TwoWay}" />
+                    </StackLayout>
+                    <StackLayout Padding="20,0,20,0">
+                        <Button 
+                            Command="{Binding ChangeCommand}"
+                            IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                            CornerRadius="23"
+                            HeightRequest="46"
+                            BackgroundColor="#3F51B5"
+                            Text="Cambiar"
+                            TextColor="White"
+                            FontAttributes="Bold">
+                        </Button>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout
+                    Padding="0,60,0,0" 
+                    VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Image 
+                            Source="fingerprint_icon"
+                            WidthRequest="80"/>
+                    </StackLayout>
+                    <StackLayout 
+                        Orientation="Horizontal"
+                        Padding="20">
+                        <Label
+                            HorizontalOptions="StartAndExpand"
+                            VerticalOptions="Center"
+                            Text="Habilitar FingerPrint:"
+                            FontSize="Medium"/>
+                        <Switch
+                            HorizontalOptions="EndAndExpand"
+                            IsToggled="{Binding SwIsToggled, Mode=TwoWay}"
+                            IsEnabled="{Binding SwIsEnabled, Mode=TwoWay}" />
+                    </StackLayout>
+                    <StackLayout Padding="60,0,60,0">
+                        <Button
+                            Command="{Binding SaveCommand}"
+                            IsEnabled="{Binding ScIsEnabled, Mode=TwoWay}"
+                            CornerRadius="23"
+                            HeightRequest="46"
+                            BackgroundColor="#3F51B5"
+                            Text="Guardar"
+                            TextColor="White"
+                            FontAttributes="Bold">
+                        </Button>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

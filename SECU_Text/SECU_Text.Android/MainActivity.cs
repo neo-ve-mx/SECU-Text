@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Content;
+using Plugin.Fingerprint;
 
 namespace SECU_Text.Droid
 {
@@ -21,6 +22,8 @@ namespace SECU_Text.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
+
+            CrossFingerprint.SetCurrentActivityResolver(() => this);
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);

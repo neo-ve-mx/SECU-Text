@@ -29,7 +29,9 @@
                         FontAttributes="Bold"
                         Text="SecuText bloqueado"/>
                 </StackLayout>
-                <StackLayout VerticalOptions="CenterAndExpand">
+                <StackLayout 
+                    IsVisible="{Binding PasswordIsVisible, Mode=TwoWay}"
+                    VerticalOptions="FillAndExpand">
                     <Entry 
                         HorizontalTextAlignment="Center" 
                         Placeholder="Clave" 
@@ -56,12 +58,27 @@
                         </Button>
                     </StackLayout>
                 </StackLayout>
-                <StackLayout VerticalOptions="EndAndExpand">
-                    <Label 
+                <StackLayout
+                    IsVisible="{Binding FingerPrintIsVisible, Mode=TwoWay}"
+                    VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Button
+                        Command="{Binding FingerCommand}"
+                        ImageSource="fingerprint_icon"
+                        BackgroundColor="Transparent"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label 
+                        Text="Toque la imágen de la huella"
+                        HorizontalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout VerticalOptions="EndAndExpand">
+                        <Label 
                         Text="SECU-Text | NeoSoft © 2019"
                         HorizontalTextAlignment="Center"
                         FontSize="Small"
                         FontAttributes="Bold"/>
+                    </StackLayout>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

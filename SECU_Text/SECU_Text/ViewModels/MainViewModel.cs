@@ -19,6 +19,7 @@ namespace SECU_Text.ViewModels
         public AddItemViewModel AddItem { get; set; }
         public ViewItemViewModel ViewItem { get; set; }
         public EditItemViewModel EditItem { get; set; }
+        public SecurityViewModel Security { get; set; }
         #endregion
 
         #region Constructors
@@ -40,6 +41,17 @@ namespace SECU_Text.ViewModels
                 {
                     db.CreateTable<T_Appuser>();
                 }
+                var resultTconfig = db.GetTableInfo("T_Config");
+                if (resultTconfig.Count == 0)
+                {
+                    db.CreateTable<T_Config>();
+                    T_Config t_Config = new T_Config { ItemsOrder = "IconTitle", FingerPrintAllow = false };
+                    var resultDB = db.Insert(t_Config);
+                    if (resultDB != 1)
+                    {
+                        throw new Exception("No se pudo crear la configuración inicial.");
+                    }
+                }
                 #endregion
             }
             catch (SQLiteException sqlex)
@@ -56,6 +68,7 @@ namespace SECU_Text.ViewModels
             this.AddItem = new AddItemViewModel();
             this.ViewItem = new ViewItemViewModel(new Models.T_Entry());
             this.EditItem = new EditItemViewModel(new Models.T_Entry());
+            this.Security = new SecurityViewModel();
         }
         #endregion
 
