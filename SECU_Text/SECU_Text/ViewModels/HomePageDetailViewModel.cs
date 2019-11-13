@@ -1,12 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using SECU_Text.Helpers;
 using SECU_Text.Models;
 using SECU_Text.Services;
 using SECU_Text.Views;
 using SQLite;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -63,7 +62,10 @@ namespace SECU_Text.ViewModels
             }
             catch (SQLiteException sqlex)
             {
-                Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                Application.Current.MainPage.DisplayAlert(
+                    Languages.ExceptionLiteral1, 
+                    Languages.ExceptionLiteral2, 
+                    Languages.ExceptionLiteral3);
                 return;
             }
         }

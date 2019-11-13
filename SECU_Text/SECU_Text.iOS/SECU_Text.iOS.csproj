@@ -63,6 +63,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Implementations\Localize.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Services\iOSSQLitePlatform.cs" />
@@ -345,4 +346,5 @@
   <ItemGroup>
     <BundleResource Include="Resources\text_item%403x.png" />
   </ItemGroup>
+  <ItemGroup />
 </Project>

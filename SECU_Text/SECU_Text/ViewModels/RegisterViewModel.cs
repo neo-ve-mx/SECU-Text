@@ -5,6 +5,7 @@ using SECU_Text.Views;
 using SQLite;
 using System.Windows.Input;
 using Xamarin.Forms;
+using SECU_Text.Helpers;
 
 namespace SECU_Text.ViewModels
 {
@@ -59,9 +60,9 @@ namespace SECU_Text.ViewModels
             if (string.IsNullOrEmpty(this.Password))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "ERROR",
-                    "Ingrese su contraseña.",
-                    "Aceptar");
+                    Languages.ExceptionLiteral1,
+                    Languages.RegisterLiteral1,
+                    Languages.ExceptionLiteral3);
                 return;
             }
 
@@ -82,13 +83,19 @@ namespace SECU_Text.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("ERROR", "No se pudo crear la clave.", "Aceptar");
+                    await Application.Current.MainPage.DisplayAlert(
+                        Languages.ExceptionLiteral1, 
+                        Languages.RegisterLiteral2, 
+                        Languages.ExceptionLiteral3);
                     return;
                 }
             }
             catch (SQLiteException sqlex)
             {
-                await Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.ExceptionLiteral1,
+                    Languages.ExceptionLiteral2,
+                    Languages.ExceptionLiteral3);
                 return;
             }
         }

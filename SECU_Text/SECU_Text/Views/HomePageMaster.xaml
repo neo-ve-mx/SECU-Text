@@ -32,19 +32,12 @@
                     <Grid>
                         <StackLayout
                             Orientation="Horizontal"
-                            Padding="20,0,0,0">
-                            <Label 
-                                Text="SECU-Text" 
-                                HorizontalOptions="StartAndExpand"
-                                VerticalOptions="Center"
-                                TextColor="White"
-                                FontAttributes="Italic"
-                                FontSize="25"/>
+                            Padding="20,0,10,0">
                             <Image
                                 VerticalOptions="Center"
-                                HorizontalOptions="End"
+                                HorizontalOptions="EndAndExpand"
                                 Source="logo_vertical" 
-                                WidthRequest="50" />
+                                WidthRequest="200" />
                         </StackLayout>
                     </Grid>
                 </Grid>

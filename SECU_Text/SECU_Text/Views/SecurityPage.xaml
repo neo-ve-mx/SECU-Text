@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:language="clr-namespace:SECU_Text.Helpers"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.SecurityPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
@@ -25,12 +26,12 @@
                         <Label
                             FontSize="Large"
                             FontAttributes="Bold"
-                            Text="Cambio de clave"/>
+                            Text="{language:Translate SecurityLiteral7}"/>
                     </StackLayout>
                     <StackLayout>
                         <Entry 
                             HorizontalTextAlignment="Center" 
-                            Placeholder="Clave" 
+                            Placeholder="{language:Translate LoginLiteral5}" 
                             IsPassword="True" 
                             Text="{Binding Password, Mode=TwoWay}" />
                     </StackLayout>
@@ -41,7 +42,7 @@
                             CornerRadius="23"
                             HeightRequest="46"
                             BackgroundColor="#3F51B5"
-                            Text="Cambiar"
+                            Text="{language:Translate RegisterLiteral4}"
                             TextColor="White"
                             FontAttributes="Bold">
                         </Button>
@@ -61,7 +62,7 @@
                         <Label
                             HorizontalOptions="StartAndExpand"
                             VerticalOptions="Center"
-                            Text="Habilitar FingerPrint:"
+                            Text="{language:Translate SecurityLiteral8}"
                             FontSize="Medium"/>
                         <Switch
                             HorizontalOptions="EndAndExpand"
@@ -75,7 +76,7 @@
                             CornerRadius="23"
                             HeightRequest="46"
                             BackgroundColor="#3F51B5"
-                            Text="Guardar"
+                            Text="{language:Translate RegisterLiteral4}"
                             TextColor="White"
                             FontAttributes="Bold">
                         </Button>

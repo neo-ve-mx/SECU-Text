@@ -6,6 +6,7 @@ using SQLite;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using SECU_Text.Helpers;
 
 namespace SECU_Text.ViewModels
 {
@@ -100,9 +101,9 @@ namespace SECU_Text.ViewModels
             if (Clipboard.HasText)
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "SECU-Text",
-                    "Datos de la entrada copiados al portapapeles.",
-                    "Aceptar");
+                    Languages.AppLiteral1,
+                    Languages.ViewItemLiteral1,
+                    Languages.ExceptionLiteral3);
                 return;
             }
         }
@@ -117,7 +118,11 @@ namespace SECU_Text.ViewModels
 
         private async void Delete()
         {
-            bool result = await Application.Current.MainPage.DisplayAlert("SECU-Text", "Desea eliminar la entrada actual?", "Si", "No");
+            bool result = await Application.Current.MainPage.DisplayAlert(
+                Languages.AppLiteral1, 
+                Languages.ViewItemLiteral2, 
+                Languages.ViewItemLiteral3, 
+                Languages.ViewItemLiteral4);
             if (result)
             {
                 try
@@ -130,13 +135,19 @@ namespace SECU_Text.ViewModels
                     }
                     else
                     {
-                        await Application.Current.MainPage.DisplayAlert("ERROR", "No se pudo eliminar la entrada actual.", "Aceptar");
+                        await Application.Current.MainPage.DisplayAlert(
+                            Languages.ExceptionLiteral1, 
+                            Languages.ViewItemLiteral5, 
+                            Languages.ExceptionLiteral3);
                         return;
                     }
                 }
                 catch (SQLiteException sqlex)
                 {
-                    await Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                    await Application.Current.MainPage.DisplayAlert(
+                        Languages.ExceptionLiteral1, 
+                        Languages.ExceptionLiteral2, 
+                        Languages.ExceptionLiteral3);
                     return;
                 }
             }

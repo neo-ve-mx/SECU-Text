@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:language="clr-namespace:SECU_Text.Helpers"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.AboutPage">
     <ContentPage.Content>
@@ -29,8 +30,6 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
-                                        <Span Text="SECU-Text" FontAttributes="Bold" FontSize="22"/>
-                                        <Span Text=" "/>
                                         <Span Text=" Ver 1.0" ForegroundColor="#3F51B5"/>
                                     </FormattedString.Spans>
                                 </FormattedString>
@@ -40,9 +39,8 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
-                                        <Span Text="Aplicación" />
-                                        <Span Text=" OPEN SOURCE" />
-                                        <Span Text=" 2019 NeoSoft ©" FontAttributes="Bold" />
+                                        <Span Text="{language:Translate AboutLiteral1}" />
+                                        <Span Text=" 2019 ©" FontAttributes="Bold" />
                                         <Span Text="." />
                                     </FormattedString.Spans>
                                 </FormattedString>
@@ -52,11 +50,11 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
-                                        <Span Text="Disponible en: " />
+                                        <Span Text="{language:Translate AboutLiteral2}" />
                                         <Span Text=" "/>
                                         <Span Text="iOS y Android" FontAttributes="Bold" />
                                         <Span Text=" "/>
-                                        <Span Text=" más recientes." />
+                                        <Span Text="{language:Translate AboutLiteral3}" />
                                     </FormattedString.Spans>
                                 </FormattedString>
                             </Label.FormattedText>
@@ -67,7 +65,7 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
-                                        <Span Text="Aplicación desarrollada por:" />
+                                        <Span Text="{language:Translate AboutLiteral4}" />
                                     </FormattedString.Spans>
                                 </FormattedString>
                             </Label.FormattedText>
@@ -97,7 +95,7 @@
                     </StackLayout>
                     <StackLayout VerticalOptions="EndAndExpand" Padding="0,0,0,20">
                         <Label 
-                        Text=".::Dedicada a mi hija Valentina, te amo hija::."
+                        Text="{language:Translate AboutLiteral5}"
                         HorizontalTextAlignment="Center"
                         FontSize="Medium"
                         FontAttributes="Bold"/>

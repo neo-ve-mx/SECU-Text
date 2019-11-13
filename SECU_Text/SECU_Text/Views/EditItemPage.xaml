@@ -3,13 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:language="clr-namespace:SECU_Text.Helpers"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.EditItemPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.ToolbarItems>
         <ToolbarItem 
             BindingContext="{Binding EditItem}" 
-            Text="Guardar Entrada"  
+            Text="{language:Translate RegisterLiteral4}"  
             Icon="save_icon" 
             Command="{Binding SaveCommand}" />
     </ContentPage.ToolbarItems>
@@ -20,12 +21,12 @@
             <StackLayout>
                 <StackLayout>
                     <Label 
-                        Text="Tipo de entrada:" 
+                        Text="{language:Translate ViewItemLiteral9}" 
                         FontSize="Large" 
                         TextColor="#3F51B5"/>
                     <Picker 
                         x:Name="TypeItemName" 
-                        Title="Seleccione..." 
+                        Title="{language:Translate AppLiteral2}" 
                         ItemsSource="{Binding TypesList}" 
                         ItemDisplayBinding="{Binding nameType}" 
                         SelectedItem="{Binding TypeItem, Mode=TwoWay}" 
@@ -34,11 +35,11 @@
                 </StackLayout>
                 <StackLayout>
                     <Label 
-                        Text="Título de la entrada:" 
+                        Text="{language:Translate ViewItemLiteral10}" 
                         FontSize="Large" 
                         TextColor="#3F51B5"/>
                     <Entry 
-                        Placeholder="Ingrese texto aquí..." 
+                        Placeholder="{language:Translate AppLiteral3}" 
                         HorizontalOptions="FillAndExpand" 
                         Text="{Binding TitleItem, Mode=TwoWay}" 
                         MaxLength="100" 
@@ -46,12 +47,12 @@
                 </StackLayout>
                 <StackLayout>
                     <Label 
-                        Text="Datos de la entrada:" 
+                        Text="{language:Translate ViewItemLiteral11}" 
                         FontSize="Large" 
                         TextColor="#3F51B5"/>
                     <ScrollView>
                         <Editor 
-                            Placeholder="Ingrese texto aquí..." 
+                            Placeholder="{language:Translate AppLiteral3}" 
                             AutoSize="TextChanges" 
                             Text="{Binding ContentItem, Mode=TwoWay}" 
                             MaxLength="800" 

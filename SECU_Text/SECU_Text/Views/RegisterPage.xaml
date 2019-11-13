@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:language="clr-namespace:SECU_Text.Helpers"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.RegisterPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
@@ -28,12 +29,12 @@
                     <Label
                         FontSize="Large"
                         FontAttributes="Bold"
-                        Text="SecuText crear clave"/>
+                        Text="{language:Translate RegisterLiteral3}"/>
                 </StackLayout>
                 <StackLayout VerticalOptions="CenterAndExpand">
                     <Entry 
                         HorizontalTextAlignment="Center" 
-                        Placeholder="Clave" 
+                        Placeholder="{language:Translate LoginLiteral5}" 
                         IsPassword="True" 
                         Text="{Binding Password, Mode=TwoWay}" 
                         MaxLength="255" />
@@ -51,7 +52,7 @@
                             CornerRadius="23"
                             HeightRequest="46"
                             BackgroundColor="#3F51B5"
-                            Text="Crear"
+                            Text="{language:Translate RegisterLiteral4}"
                             TextColor="White"
                             FontAttributes="Bold">
                         </Button>
@@ -59,7 +60,7 @@
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand">
                     <Label 
-                        Text="SECU-Text | NeoSoft © 2019" 
+                        Text="SECURE-Text © 2019" 
                         HorizontalTextAlignment="Center"
                         FontSize="Small"
                         FontAttributes="Bold"/>

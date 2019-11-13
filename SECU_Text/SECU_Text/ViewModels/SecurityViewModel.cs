@@ -3,12 +3,11 @@ using Plugin.Fingerprint;
 using SECU_Text.Models;
 using SECU_Text.Services;
 using SQLite;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
+using SECU_Text.Helpers;
 
 namespace SECU_Text.ViewModels
 {
@@ -98,7 +97,10 @@ namespace SECU_Text.ViewModels
             }
             catch (SQLiteException sqlex)
             {
-                Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                Application.Current.MainPage.DisplayAlert(
+                    Languages.ExceptionLiteral1, 
+                    Languages.ExceptionLiteral2, 
+                    Languages.ExceptionLiteral3);
                 return;
             }
         }
@@ -117,7 +119,10 @@ namespace SECU_Text.ViewModels
         {
             if (string.IsNullOrEmpty(this.Password))
             {
-                await Application.Current.MainPage.DisplayAlert("ERROR", "Ingrese su nueva clave.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.ExceptionLiteral1, 
+                    Languages.SecurityLiteral1, 
+                    Languages.ExceptionLiteral3);
                 return;
             }
 
@@ -130,17 +135,26 @@ namespace SECU_Text.ViewModels
                 {
                     Password = string.Empty;
                     this.IsEnabled = true;
-                    await Application.Current.MainPage.DisplayAlert("SECU-Text", "Clave actualizada.", "Aceptar");
+                    await Application.Current.MainPage.DisplayAlert(
+                        Languages.AppLiteral1, 
+                        Languages.SecurityLiteral2, 
+                        Languages.ExceptionLiteral3);
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("ERROR", "No se pudo atualizar la clave.", "Aceptar");
+                    await Application.Current.MainPage.DisplayAlert(
+                        Languages.ExceptionLiteral1, 
+                        Languages.SecurityLiteral3, 
+                        Languages.ExceptionLiteral3);
                     return;
                 }
             }
             catch (SQLiteException sqlex)
             {
-                await Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.ExceptionLiteral1, 
+                    Languages.ExceptionLiteral2, 
+                    Languages.ExceptionLiteral3);
                 return;
             }
         }
@@ -165,22 +179,34 @@ namespace SECU_Text.ViewModels
                     this.ScIsEnabled = true;
                     if (SwIsToggled)
                     {
-                        await Application.Current.MainPage.DisplayAlert("SECU-Text", "FingerPrint habilitado.", "Aceptar");
+                        await Application.Current.MainPage.DisplayAlert(
+                            Languages.AppLiteral1, 
+                            Languages.SecurityLiteral4, 
+                            Languages.ExceptionLiteral3);
                     }
                     else
                     {
-                        await Application.Current.MainPage.DisplayAlert("SECU-Text", "FingerPrint deshabilitado.", "Aceptar");
+                        await Application.Current.MainPage.DisplayAlert(
+                            Languages.AppLiteral1, 
+                            Languages.SecurityLiteral5, 
+                            Languages.ExceptionLiteral3);
                     }
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("ERROR", "No se pudo habilitar el FingerPrint.", "Aceptar");
+                    await Application.Current.MainPage.DisplayAlert(
+                        Languages.ExceptionLiteral1, 
+                        Languages.SecurityLiteral6, 
+                        Languages.ExceptionLiteral3);
                     return;
                 }
             }
             catch (SQLiteException sqlex)
             {
-                await Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.ExceptionLiteral1, 
+                    Languages.ExceptionLiteral2, 
+                    Languages.ExceptionLiteral3);
                 return;
             }
         }

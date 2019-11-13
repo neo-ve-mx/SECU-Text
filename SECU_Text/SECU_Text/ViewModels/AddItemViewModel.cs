@@ -1,10 +1,10 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using SECU_Text.Helpers;
 using SECU_Text.Models;
 using SECU_Text.Services;
 using SECU_Text.Views;
 using SQLite;
 using System.Collections.Generic;
-using System.Threading;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -58,23 +58,23 @@ namespace SECU_Text.ViewModels
             List<ItemType> itemTypes = new List<ItemType>();
             itemType = new ItemType();
             itemType.iconType = "pass_item";
-            itemType.nameType = "Claves de Acceso";
+            itemType.nameType = Languages.ItemTypeLiteral1;
             itemTypes.Add(itemType);
             itemType = new ItemType();
             itemType.iconType = "bank_item";
-            itemType.nameType = "Información Bancaria";
+            itemType.nameType = Languages.ItemTypeLiteral2;
             itemTypes.Add(itemType);
             itemType = new ItemType();
             itemType.iconType = "phone_item";
-            itemType.nameType = "Número Telefónico";
+            itemType.nameType = Languages.ItemTypeLiteral3;
             itemTypes.Add(itemType);
             itemType = new ItemType();
             itemType.iconType = "card_item";
-            itemType.nameType = "Tarjetas de Pago";
+            itemType.nameType = Languages.ItemTypeLiteral4;
             itemTypes.Add(itemType);
             itemType = new ItemType();
             itemType.iconType = "text_item";
-            itemType.nameType = "Nota de Texto";
+            itemType.nameType = Languages.ItemTypeLiteral5;
             itemTypes.Add(itemType);
             TypesList = itemTypes;
             TypeItemIndex = -1;
@@ -96,31 +96,35 @@ namespace SECU_Text.ViewModels
             if (this.TypeItem == null)
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "ERROR",
-                    "Seleccione un tipo de entrada.",
-                    "Aceptar");
+                    Languages.ExceptionLiteral1,
+                    Languages.AddItemLiteral1,
+                    Languages.ExceptionLiteral3);
                 return;
             }
 
             if (string.IsNullOrEmpty(this.TitleItem))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "ERROR",
-                    "Ingrese un título para la entrada.",
-                    "Aceptar");
+                    Languages.ExceptionLiteral1,
+                    Languages.AddItemLiteral2,
+                    Languages.ExceptionLiteral3);
                 return;
             }
 
             if (string.IsNullOrEmpty(this.ContentItem))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "ERROR",
-                    "Ingrese el contenido para la entrada.",
-                    "Aceptar");
+                    Languages.ExceptionLiteral1,
+                    Languages.AddItemLiteral3,
+                    Languages.ExceptionLiteral3);
                 return;
             }
 
-            bool result = await Application.Current.MainPage.DisplayAlert("SECU-Text", "Desea agregar la nueva entrada?", "Si", "No");
+            bool result = await Application.Current.MainPage.DisplayAlert(
+                Languages.AppLiteral1, 
+                Languages.AddItemLiteral4, 
+                Languages.ViewItemLiteral3, 
+                Languages.ViewItemLiteral4);
             if (result)
             {
                 try
@@ -138,13 +142,19 @@ namespace SECU_Text.ViewModels
                     }
                     else
                     {
-                        await Application.Current.MainPage.DisplayAlert("ERROR", "No se pudo crear la entrada.", "Aceptar");
+                        await Application.Current.MainPage.DisplayAlert(
+                            Languages.ExceptionLiteral1, 
+                            Languages.AddItemLiteral5, 
+                            Languages.ExceptionLiteral3);
                         return;
                     }
                 }
                 catch (SQLiteException sqlex)
                 {
-                    await Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                    await Application.Current.MainPage.DisplayAlert(
+                        Languages.ExceptionLiteral1, 
+                        Languages.ExceptionLiteral2, 
+                        Languages.ExceptionLiteral3);
                     return;
                 }
             }
@@ -162,7 +172,11 @@ namespace SECU_Text.ViewModels
         {
             if (this.TypeItem != null || !string.IsNullOrEmpty(this.TitleItem) || !string.IsNullOrEmpty(this.ContentItem))
             {
-                bool result = await Application.Current.MainPage.DisplayAlert("ALERTA", "Desea cancelar los cambios?", "Si", "No");
+                bool result = await Application.Current.MainPage.DisplayAlert(
+                    Languages.AppLiteral1, 
+                    Languages.AddItemLiteral6, 
+                    Languages.ViewItemLiteral3, 
+                    Languages.ViewItemLiteral4);
                 if (result)
                 {
                     MainViewModel.GetInstance().HomePage = new HomePageViewModel();

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:language="clr-namespace:SECU_Text.Helpers"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.LoginPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
@@ -27,17 +28,16 @@
                     <Label
                         FontSize="Large"
                         FontAttributes="Bold"
-                        Text="SecuText bloqueado"/>
+                        Text="{language:Translate LoginLiteral4}"/>
                 </StackLayout>
                 <StackLayout 
                     IsVisible="{Binding PasswordIsVisible, Mode=TwoWay}"
                     VerticalOptions="CenterAndExpand">
                     <Entry 
                         HorizontalTextAlignment="Center" 
-                        Placeholder="Clave" 
+                        Placeholder="{language:Translate LoginLiteral5}" 
                         IsPassword="True" 
-                        Text="{Binding 
-                        Password, Mode=TwoWay}" />
+                        Text="{Binding Password, Mode=TwoWay}" />
                     <StackLayout>
                         <ActivityIndicator 
                             IsRunning="{Binding IsRunning, Mode=TwoWay}" 
@@ -52,7 +52,7 @@
                             CornerRadius="23"
                             HeightRequest="46"
                             BackgroundColor="#3F51B5"
-                            Text="Ingresar"
+                            Text="{language:Translate LoginLiteral6}"
                             TextColor="White"
                             FontAttributes="Bold">
                         </Button>
@@ -69,13 +69,13 @@
                     </StackLayout>
                     <StackLayout>
                         <Label 
-                        Text="Toque la imágen de la huella"
+                        Text="{language:Translate LoginLiteral7}"
                         HorizontalOptions="Center"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout VerticalOptions="EndAndExpand">
                     <Label 
-                        Text="SECU-Text | NeoSoft © 2019"
+                        Text="SECURE-Text © 2019"
                         HorizontalTextAlignment="Center"
                         FontSize="Small"
                         FontAttributes="Bold"/>

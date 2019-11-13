@@ -3,23 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:language="clr-namespace:SECU_Text.Helpers"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.ViewItemPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
     <ContentPage.ToolbarItems>
         <ToolbarItem 
             BindingContext="{Binding ViewItem}" 
-            Text="Copiar Entrada"  
+            Text="{language:Translate ViewItemLiteral6}"  
             Icon="copy_icon" 
             Command="{Binding CopyCommand}" />
         <ToolbarItem 
             BindingContext="{Binding ViewItem}" 
-            Text="Editar Entrada"  
+            Text="{language:Translate ViewItemLiteral7}"  
             Icon="edit_icon" 
             Command="{Binding EditCommand}" />
         <ToolbarItem 
             BindingContext="{Binding ViewItem}" 
-            Text="Eliminar Entrada" 
+            Text="{language:Translate ViewItemLiteral8}" 
             Icon="delete_icon" 
             Command="{Binding DeleteCommand}" />
     </ContentPage.ToolbarItems>
@@ -30,7 +31,7 @@
             HorizontalOptions="FillAndExpand">
             <StackLayout>
                 <Label 
-                    Text="Tipo de entrada:" 
+                    Text="{language:Translate ViewItemLiteral9}" 
                     FontSize="Large" 
                     TextColor="#3F51B5" 
                     HorizontalOptions="FillAndExpand" />
@@ -49,7 +50,7 @@
             </StackLayout>
             <StackLayout Padding="0,0,0,30" HorizontalOptions="FillAndExpand">
                 <Label 
-                    Text="Título de la entrada:" 
+                    Text="{language:Translate ViewItemLiteral10}" 
                     FontSize="Large" 
                     TextColor="#3F51B5" 
                     HorizontalOptions="FillAndExpand" />
@@ -61,7 +62,7 @@
             </StackLayout>
             <StackLayout HorizontalOptions="FillAndExpand">
                 <Label 
-                    Text="Datos de la entrada:" 
+                    Text="{language:Translate ViewItemLiteral11}" 
                     FontSize="Large" 
                     TextColor="#3F51B5" 
                     HorizontalOptions="FillAndExpand" />

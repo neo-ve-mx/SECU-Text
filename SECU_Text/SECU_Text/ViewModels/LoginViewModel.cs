@@ -9,6 +9,7 @@ using Xamarin.Forms;
 using System.Collections.Generic;
 using SECU_Text.Models;
 using Plugin.Fingerprint;
+using SECU_Text.Helpers;
 
 namespace SECU_Text.ViewModels
 {
@@ -99,7 +100,7 @@ namespace SECU_Text.ViewModels
             }
             catch (SQLiteException sqlex)
             {
-                Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                Application.Current.MainPage.DisplayAlert(Languages.ExceptionLiteral1, Languages.ExceptionLiteral2, Languages.ExceptionLiteral3);
                 return;
             }
         }
@@ -116,7 +117,7 @@ namespace SECU_Text.ViewModels
 
         private async void Finger()
         {
-            var result = await CrossFingerprint.Current.AuthenticateAsync("Toque el sesor de huellas...");
+            var result = await CrossFingerprint.Current.AuthenticateAsync(Languages.LoginLiteral1);
             if (result.Authenticated)
             {
                 MainViewModel.GetInstance().HomePageDetail = new HomePageDetailViewModel();
@@ -141,7 +142,7 @@ namespace SECU_Text.ViewModels
         {
             if (string.IsNullOrEmpty(this.Password))
             {
-                await Application.Current.MainPage.DisplayAlert("ERROR", "Ingrese su contraseña.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(Languages.ExceptionLiteral1, Languages.LoginLiteral2, Languages.ExceptionLiteral3);
                 return;
             }
 
@@ -155,7 +156,7 @@ namespace SECU_Text.ViewModels
             }
             catch (SQLiteException sqlex)
             {
-                await Application.Current.MainPage.DisplayAlert("ERROR", "Ocurrió un error.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(Languages.ExceptionLiteral1, Languages.ExceptionLiteral2, Languages.ExceptionLiteral3);
                 return;
             }
 
@@ -163,7 +164,7 @@ namespace SECU_Text.ViewModels
             {
                 //this.IsRunning = false;
                 this.IsEnabled = true;
-                await Application.Current.MainPage.DisplayAlert("Error", "Clave inválida.", "Aceptar");
+                await Application.Current.MainPage.DisplayAlert(Languages.ExceptionLiteral1, Languages.LoginLiteral3, Languages.ExceptionLiteral3);
                 this.Password = string.Empty;
                 return;
             }
