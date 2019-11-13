@@ -124,7 +124,7 @@ namespace SECU_Text.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Enter the content for item.
+        ///   Looks up a localized string similar to Enter the content for item..
         /// </summary>
         public static string AddItemLiteral3 {
             get {

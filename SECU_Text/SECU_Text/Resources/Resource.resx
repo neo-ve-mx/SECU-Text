@@ -139,7 +139,7 @@
     <value>Enter a title name for item.</value>
   </data>
   <data name="AddItemLiteral3" xml:space="preserve">
-    <value>Enter the content for item</value>
+    <value>Enter the content for item.</value>
   </data>
   <data name="AddItemLiteral4" xml:space="preserve">
     <value>Do you want to add the new item?</value>
