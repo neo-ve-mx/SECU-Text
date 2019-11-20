@@ -33,7 +33,7 @@
                 <Label 
                     Text="{language:Translate ViewItemLiteral9}" 
                     FontSize="Large" 
-                    TextColor="#3F51B5" 
+                    TextColor="#778bce" 
                     HorizontalOptions="FillAndExpand" />
                 <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
                     <Label 
@@ -52,7 +52,7 @@
                 <Label 
                     Text="{language:Translate ViewItemLiteral10}" 
                     FontSize="Large" 
-                    TextColor="#3F51B5" 
+                    TextColor="#778bce" 
                     HorizontalOptions="FillAndExpand" />
                 <Label 
                     Text="{Binding Title, Mode=TwoWay}" 
@@ -64,7 +64,7 @@
                 <Label 
                     Text="{language:Translate ViewItemLiteral11}" 
                     FontSize="Large" 
-                    TextColor="#3F51B5" 
+                    TextColor="#778bce" 
                     HorizontalOptions="FillAndExpand" />
                 <ScrollView>
                     <Label 

@@ -23,7 +23,7 @@
                     <Label 
                         Text="{language:Translate ViewItemLiteral9}" 
                         FontSize="Large" 
-                        TextColor="#3F51B5"/>
+                        TextColor="#778bce"/>
                     <Picker 
                         x:Name="TypeItemName" 
                         Title="{language:Translate AppLiteral2}" 
@@ -37,7 +37,7 @@
                     <Label 
                         Text="{language:Translate ViewItemLiteral10}" 
                         FontSize="Large" 
-                        TextColor="#3F51B5"/>
+                        TextColor="#778bce"/>
                     <Entry 
                         Placeholder="{language:Translate AppLiteral3}" 
                         HorizontalOptions="FillAndExpand" 
@@ -51,7 +51,7 @@
                     <Label 
                         Text="{language:Translate ViewItemLiteral11}" 
                         FontSize="Large" 
-                        TextColor="#3F51B5"/>
+                        TextColor="#778bce"/>
                     <ScrollView>
                         <Editor 
                             Placeholder="{language:Translate AppLiteral3}" 

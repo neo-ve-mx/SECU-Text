@@ -16,7 +16,7 @@
                 Orientation="Horizontal" 
                 HorizontalOptions="FillAndExpand" 
                 VerticalOptions="Center" 
-                BackgroundColor="#3F51B5" Padding="20">
+                BackgroundColor="#778bce" Padding="20">
                 <StackLayout HorizontalOptions="CenterAndExpand">
                     <Image 
                         Source="logo" 
@@ -30,7 +30,7 @@
                             <Label.FormattedText>
                                 <FormattedString>
                                     <FormattedString.Spans>
-                                        <Span Text=" Ver 1.0" ForegroundColor="#3F51B5"/>
+                                        <Span Text=" Ver 1.0" ForegroundColor="#778bce"/>
                                     </FormattedString.Spans>
                                 </FormattedString>
                             </Label.FormattedText>

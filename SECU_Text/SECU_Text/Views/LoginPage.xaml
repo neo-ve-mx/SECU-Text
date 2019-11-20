@@ -51,7 +51,7 @@
                             IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                             CornerRadius="23"
                             HeightRequest="46"
-                            BackgroundColor="#3F51B5"
+                            BackgroundColor="#778bce"
                             Text="{language:Translate LoginLiteral6}"
                             TextColor="White"
                             FontAttributes="Bold">
@@ -78,7 +78,8 @@
                         Text="SECURE-Text © 2019"
                         HorizontalTextAlignment="Center"
                         FontSize="Small"
-                        FontAttributes="Bold"/>
+                        FontAttributes="Bold"
+                        TextColor="#778bce"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

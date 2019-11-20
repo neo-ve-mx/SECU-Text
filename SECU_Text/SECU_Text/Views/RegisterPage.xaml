@@ -43,7 +43,7 @@
                             IsRunning="{Binding IsRunning, Mode=TwoWay}" 
                             IsVisible="False" 
                             IsEnabled="True" 
-                            Color="#3F51B5" />
+                            Color="#778bce" />
                     </StackLayout>
                     <StackLayout Padding="30,20,30,0">
                         <Button 
@@ -51,7 +51,7 @@
                             IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                             CornerRadius="23"
                             HeightRequest="46"
-                            BackgroundColor="#3F51B5"
+                            BackgroundColor="#778bce"
                             Text="{language:Translate RegisterLiteral4}"
                             TextColor="White"
                             FontAttributes="Bold">
@@ -63,7 +63,8 @@
                         Text="SECURE-Text © 2019" 
                         HorizontalTextAlignment="Center"
                         FontSize="Small"
-                        FontAttributes="Bold"/>
+                        FontAttributes="Bold"
+                        TextColor="#778bce"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

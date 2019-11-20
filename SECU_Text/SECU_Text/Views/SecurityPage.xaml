@@ -41,7 +41,7 @@
                             IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                             CornerRadius="23"
                             HeightRequest="46"
-                            BackgroundColor="#3F51B5"
+                            BackgroundColor="#778bce"
                             Text="{language:Translate RegisterLiteral4}"
                             TextColor="White"
                             FontAttributes="Bold">
@@ -75,7 +75,7 @@
                             IsEnabled="{Binding ScIsEnabled, Mode=TwoWay}"
                             CornerRadius="23"
                             HeightRequest="46"
-                            BackgroundColor="#3F51B5"
+                            BackgroundColor="#778bce"
                             Text="{language:Translate RegisterLiteral4}"
                             TextColor="White"
                             FontAttributes="Bold">

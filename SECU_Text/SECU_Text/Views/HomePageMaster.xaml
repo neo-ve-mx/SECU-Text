@@ -24,7 +24,7 @@
                 </x:Array>
             </d:ListView.ItemsSource>
             <ListView.Header>
-                <Grid BackgroundColor="#3F51B5">
+                <Grid BackgroundColor="#778bce">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="49" />
                         <RowDefinition Height="*" />
