@@ -121,7 +121,7 @@
     <value>OPEN SOURCE application</value>
   </data>
   <data name="AboutLiteral2" xml:space="preserve">
-    <value>Available in:</value>
+    <value>Available on:</value>
   </data>
   <data name="AboutLiteral3" xml:space="preserve">
     <value>most recent.</value>
@@ -158,6 +158,21 @@
   </data>
   <data name="AppLiteral3" xml:space="preserve">
     <value>Enter your text here...</value>
+  </data>
+  <data name="AppLiteral4" xml:space="preserve">
+    <value>Press back button</value>
+  </data>
+  <data name="AppLiteral5" xml:space="preserve">
+    <value>times more to exit the app.</value>
+  </data>
+  <data name="AppLiteral6" xml:space="preserve">
+    <value>Item added...</value>
+  </data>
+  <data name="AppLiteral7" xml:space="preserve">
+    <value>Item updated...</value>
+  </data>
+  <data name="AppLiteral8" xml:space="preserve">
+    <value>Item deleted...</value>
   </data>
   <data name="EditItemLiteral1" xml:space="preserve">
     <value>Do you want to update the item?</value>
@@ -224,6 +239,48 @@
   </data>
   <data name="LoginLiteral7" xml:space="preserve">
     <value>Touch the fingerprint image</value>
+  </data>
+  <data name="OptionsLiteral1" xml:space="preserve">
+    <value>Backup and restore</value>
+  </data>
+  <data name="OptionsLiteral10" xml:space="preserve">
+    <value>Backup restored successfully.</value>
+  </data>
+  <data name="OptionsLiteral11" xml:space="preserve">
+    <value>Error trying to restore a backup.</value>
+  </data>
+  <data name="OptionsLiteral12" xml:space="preserve">
+    <value>Do you want make a backup, this option will overwrite an older backup?</value>
+  </data>
+  <data name="OptionsLiteral13" xml:space="preserve">
+    <value>Do you want restore a backup, this option will overwrite the current data?</value>
+  </data>
+  <data name="OptionsLiteral14" xml:space="preserve">
+    <value>This operation make and restore a backup on external storage, download folder.</value>
+  </data>
+  <data name="OptionsLiteral2" xml:space="preserve">
+    <value>Make a backup:</value>
+  </data>
+  <data name="OptionsLiteral3" xml:space="preserve">
+    <value>BACKUP</value>
+  </data>
+  <data name="OptionsLiteral4" xml:space="preserve">
+    <value>Restore a backup:</value>
+  </data>
+  <data name="OptionsLiteral5" xml:space="preserve">
+    <value>RESTORE</value>
+  </data>
+  <data name="OptionsLiteral6" xml:space="preserve">
+    <value>The external storage can not be read or write, give access on application configurations in OS options.</value>
+  </data>
+  <data name="OptionsLiteral7" xml:space="preserve">
+    <value>Backup created successfully.</value>
+  </data>
+  <data name="OptionsLiteral8" xml:space="preserve">
+    <value>Error trying to create backup.</value>
+  </data>
+  <data name="OptionsLiteral9" xml:space="preserve">
+    <value>Backup file does not exist, nothing to restore.</value>
   </data>
   <data name="RegisterLiteral1" xml:space="preserve">
     <value>Enter a new password.</value>

@@ -7,6 +7,7 @@ using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using SECU_Text.Helpers;
+using SECU_Text.Interfaces;
 
 namespace SECU_Text.ViewModels
 {
@@ -100,10 +101,7 @@ namespace SECU_Text.ViewModels
             await Clipboard.SetTextAsync(Content);
             if (Clipboard.HasText)
             {
-                await Application.Current.MainPage.DisplayAlert(
-                    Languages.AppLiteral1,
-                    Languages.ViewItemLiteral1,
-                    Languages.ExceptionLiteral3);
+                DependencyService.Get<Toast>().Show(Languages.ViewItemLiteral1);
                 return;
             }
         }
@@ -130,6 +128,7 @@ namespace SECU_Text.ViewModels
                     var resultDB = db.Delete(EntryData);
                     if (resultDB == 1)
                     {
+                        DependencyService.Get<Toast>().Show(Languages.AppLiteral8);
                         MainViewModel.GetInstance().HomePageDetail = new HomePageDetailViewModel();
                         await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
                     }

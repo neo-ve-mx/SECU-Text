@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using SECU_Text.Helpers;
+using SECU_Text.Interfaces;
 using SECU_Text.Models;
 using SECU_Text.Services;
 using SECU_Text.Views;
@@ -147,7 +148,7 @@ namespace SECU_Text.ViewModels
                         TypeItemIndex = -1;
                         TitleItem = string.Empty;
                         ContentItem = string.Empty;
-
+                        DependencyService.Get<Toast>().Show(Languages.AppLiteral7);
                         MainViewModel.GetInstance().HomePageDetail = new HomePageDetailViewModel();
                         await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
                     }

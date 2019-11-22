@@ -36,21 +36,21 @@ namespace SECU_Text.Droid
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
 
-        public override void OnBackPressed()
-        {
-            AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-            AlertDialog alert = dialog.Create();
-            alert.SetTitle("CERRAR");
-            alert.SetMessage("Deseas salir de la aplicación?");
-            alert.SetButton("NO", (c, ev) =>
-            {
+        //public override void OnBackPressed()
+        //{
+        //    AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+        //    AlertDialog alert = dialog.Create();
+        //    alert.SetTitle("CERRAR");
+        //    alert.SetMessage("Deseas salir de la aplicación?");
+        //    alert.SetButton("NO", (c, ev) =>
+        //    {
 
-            });
-            alert.SetButton2("SI", (c, ev) =>
-            {
-                Finish();
-            });
-            alert.Show();
-        }
+        //    });
+        //    alert.SetButton2("SI", (c, ev) =>
+        //    {
+        //        Finish();
+        //    });
+        //    alert.Show();
+        //}
     }
 }

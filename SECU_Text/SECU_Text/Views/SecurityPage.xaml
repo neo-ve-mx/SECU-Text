@@ -17,7 +17,7 @@
                     HorizontalOptions="Center">
                     <StackLayout Padding="140,0">
                         <Image 
-                            Source="register_icon"
+                            Source="security_icon"
                             WidthRequest="40"/>
                     </StackLayout>
                     <StackLayout 

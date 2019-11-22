@@ -17,6 +17,11 @@ namespace SECU_Text.Helpers
         public static string AppLiteral1 { get { return Resource.AppLiteral1; } }
         public static string AppLiteral2 { get { return Resource.AppLiteral2; } }
         public static string AppLiteral3 { get { return Resource.AppLiteral3; } }
+        public static string AppLiteral4 { get { return Resource.AppLiteral4; } }
+        public static string AppLiteral5 { get { return Resource.AppLiteral5; } }
+        public static string AppLiteral6 { get { return Resource.AppLiteral6; } }
+        public static string AppLiteral7 { get { return Resource.AppLiteral7; } }
+        public static string AppLiteral8 { get { return Resource.AppLiteral8; } }
         #endregion
 
         #region Exception Error
@@ -106,6 +111,23 @@ namespace SECU_Text.Helpers
         #region EditItemViewModel and EditItemView
         public static string EditItemLiteral1 { get { return Resource.EditItemLiteral1; } }
         public static string EditItemLiteral2 { get { return Resource.EditItemLiteral2; } }
+        #endregion
+
+        #region OptionsViewModel and OptionsView
+        public static string OptionsLiteral1 { get { return Resource.OptionsLiteral1; } }
+        public static string OptionsLiteral2 { get { return Resource.OptionsLiteral2; } }
+        public static string OptionsLiteral3 { get { return Resource.OptionsLiteral3; } }
+        public static string OptionsLiteral4 { get { return Resource.OptionsLiteral4; } }
+        public static string OptionsLiteral5 { get { return Resource.OptionsLiteral5; } }
+        public static string OptionsLiteral6 { get { return Resource.OptionsLiteral6; } }
+        public static string OptionsLiteral7 { get { return Resource.OptionsLiteral7; } }
+        public static string OptionsLiteral8 { get { return Resource.OptionsLiteral8; } }
+        public static string OptionsLiteral9 { get { return Resource.OptionsLiteral9; } }
+        public static string OptionsLiteral10 { get { return Resource.OptionsLiteral10; } }
+        public static string OptionsLiteral11 { get { return Resource.OptionsLiteral11; } }
+        public static string OptionsLiteral12 { get { return Resource.OptionsLiteral12; } }
+        public static string OptionsLiteral13 { get { return Resource.OptionsLiteral13; } }
+        public static string OptionsLiteral14 { get { return Resource.OptionsLiteral14; } }
         #endregion
     }
 }

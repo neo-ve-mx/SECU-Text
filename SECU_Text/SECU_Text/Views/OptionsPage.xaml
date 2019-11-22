@@ -3,14 +3,77 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:language="clr-namespace:SECU_Text.Helpers"
              mc:Ignorable="d"
              x:Class="SECU_Text.Views.OptionsPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Opciones">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="..."
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView
+            BindingContext="{Binding Options}">
+            <StackLayout
+                Padding="0,60,0,0">
+                <StackLayout Padding="140,0">
+                    <Image 
+                        Source="config_icon"
+                        WidthRequest="40"/>
+                </StackLayout>
+                <StackLayout 
+                        HorizontalOptions="Center"
+                        Padding="0,20">
+                    <Label
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        Text="{language:Translate OptionsLiteral1}"/>
+                </StackLayout>
+                <StackLayout
+                    Padding="30,40,30,0"
+                    Orientation="Horizontal">
+                    <Label
+                        VerticalOptions="Center"
+                        HorizontalOptions="StartAndExpand"
+                        Text="{language:Translate OptionsLiteral2}"/>
+                    <Button 
+                        HorizontalOptions="EndAndExpand"
+                        Command="{Binding BackupCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        CornerRadius="23"
+                        HeightRequest="46"
+                        BackgroundColor="#778bce"
+                        Text="{language:Translate OptionsLiteral3}"
+                        TextColor="White"
+                        FontAttributes="Bold">
+                    </Button>
+                </StackLayout>
+                <StackLayout
+                    Padding="30,60,30,0"
+                    Orientation="Horizontal">
+                    <Label
+                        VerticalOptions="Center"
+                        HorizontalOptions="StartAndExpand"
+                        Text="{language:Translate OptionsLiteral4}"/>
+                    <Button 
+                        HorizontalOptions="EndAndExpand"
+                        Command="{Binding RestoreCommand}"
+                        IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                        CornerRadius="23"
+                        HeightRequest="46"
+                        BackgroundColor="#778bce"
+                        Text="{language:Translate OptionsLiteral5}"
+                        TextColor="White"
+                        FontAttributes="Bold">
+                    </Button>
+                </StackLayout>
+                <StackLayout 
+                    HorizontalOptions="Center"
+                    VerticalOptions="EndAndExpand"
+                    Padding="0,20">
+                    <Label
+                        HorizontalTextAlignment="Center"
+                        FontSize="Small"
+                        Text="{language:Translate OptionsLiteral14}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

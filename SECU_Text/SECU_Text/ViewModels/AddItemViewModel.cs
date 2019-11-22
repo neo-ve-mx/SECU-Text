@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using SECU_Text.Helpers;
+using SECU_Text.Interfaces;
 using SECU_Text.Models;
 using SECU_Text.Services;
 using SECU_Text.Views;
@@ -18,6 +19,7 @@ namespace SECU_Text.ViewModels
         private int typeitemindex;
         private string titleitem;
         private string contentitem;
+        private bool isbusy;
         #endregion
 
         #region Properties
@@ -45,6 +47,11 @@ namespace SECU_Text.ViewModels
         }
 
         public List<ItemType> TypesList { get; set; }
+        public bool IsBusy
+        {
+            get { return isbusy; }
+            set { SetValue(ref isbusy, value); }
+        }
         #endregion
 
         #region Constructores
@@ -79,6 +86,8 @@ namespace SECU_Text.ViewModels
             TypesList = itemTypes;
             TypeItemIndex = -1;
             #endregion
+
+            //IsRunning = true;
         }
         #endregion
 
@@ -136,7 +145,7 @@ namespace SECU_Text.ViewModels
                         TypeItemIndex = -1;
                         TitleItem = string.Empty;
                         ContentItem = string.Empty;
-
+                        DependencyService.Get<Toast>().Show(Languages.AppLiteral6);
                         MainViewModel.GetInstance().HomePageDetail = new HomePageDetailViewModel();
                         await Application.Current.MainPage.Navigation.PushAsync(new HomePage());
                     }

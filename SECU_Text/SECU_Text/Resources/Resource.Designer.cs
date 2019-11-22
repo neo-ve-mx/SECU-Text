@@ -70,7 +70,7 @@ namespace SECU_Text.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Available in:.
+        ///   Looks up a localized string similar to Available on:.
         /// </summary>
         public static string AboutLiteral2 {
             get {
@@ -183,6 +183,51 @@ namespace SECU_Text.Resources {
         public static string AppLiteral3 {
             get {
                 return ResourceManager.GetString("AppLiteral3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Press back button.
+        /// </summary>
+        public static string AppLiteral4 {
+            get {
+                return ResourceManager.GetString("AppLiteral4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to times more to exit the app..
+        /// </summary>
+        public static string AppLiteral5 {
+            get {
+                return ResourceManager.GetString("AppLiteral5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item added....
+        /// </summary>
+        public static string AppLiteral6 {
+            get {
+                return ResourceManager.GetString("AppLiteral6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item updated....
+        /// </summary>
+        public static string AppLiteral7 {
+            get {
+                return ResourceManager.GetString("AppLiteral7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item deleted....
+        /// </summary>
+        public static string AppLiteral8 {
+            get {
+                return ResourceManager.GetString("AppLiteral8", resourceCulture);
             }
         }
         
@@ -381,6 +426,132 @@ namespace SECU_Text.Resources {
         public static string LoginLiteral7 {
             get {
                 return ResourceManager.GetString("LoginLiteral7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup and restore.
+        /// </summary>
+        public static string OptionsLiteral1 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup restored successfully..
+        /// </summary>
+        public static string OptionsLiteral10 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral10", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error trying to restore a backup..
+        /// </summary>
+        public static string OptionsLiteral11 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral11", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want make a backup, this option will overwrite an older backup?.
+        /// </summary>
+        public static string OptionsLiteral12 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral12", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you want restore a backup, this option will overwrite the current data?.
+        /// </summary>
+        public static string OptionsLiteral13 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral13", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to This operation make and restore a backup on external storage, download folder..
+        /// </summary>
+        public static string OptionsLiteral14 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral14", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Make a backup:.
+        /// </summary>
+        public static string OptionsLiteral2 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BACKUP.
+        /// </summary>
+        public static string OptionsLiteral3 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore a backup:.
+        /// </summary>
+        public static string OptionsLiteral4 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RESTORE.
+        /// </summary>
+        public static string OptionsLiteral5 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The external storage can not be read or write, give access on application configurations in OS options..
+        /// </summary>
+        public static string OptionsLiteral6 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup created successfully..
+        /// </summary>
+        public static string OptionsLiteral7 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error trying to create backup..
+        /// </summary>
+        public static string OptionsLiteral8 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral8", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Backup file does not exist, nothing to restore..
+        /// </summary>
+        public static string OptionsLiteral9 {
+            get {
+                return ResourceManager.GetString("OptionsLiteral9", resourceCulture);
             }
         }
         

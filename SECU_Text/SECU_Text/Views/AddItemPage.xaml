@@ -62,6 +62,10 @@
                             Keyboard="Text" />
                     </ScrollView>
                 </StackLayout>
+                <ActivityIndicator
+                    IsRunning="{Binding IsBusy}"
+                    IsVisible="{Binding IsBusy}"
+                    Color="#778bce"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

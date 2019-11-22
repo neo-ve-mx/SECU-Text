@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using SECU_Text.Helpers;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace SECU_Text.Views
@@ -7,7 +8,7 @@ namespace SECU_Text.Views
     public partial class HomePageMaster : ContentPage
     {
         #region Atributes
-        public ListView ListViewMasterPage; 
+        public ListView ListViewMasterPage;
         #endregion
 
         public HomePageMaster()

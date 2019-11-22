@@ -52,7 +52,7 @@
                                     <FormattedString.Spans>
                                         <Span Text="{language:Translate AboutLiteral2}" />
                                         <Span Text=" "/>
-                                        <Span Text="iOS y Android" FontAttributes="Bold" />
+                                        <Span Text="iOS | Android" FontAttributes="Bold" />
                                         <Span Text=" "/>
                                         <Span Text="{language:Translate AboutLiteral3}" />
                                     </FormattedString.Spans>

@@ -64,8 +64,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Implementations\Localize.cs" />
+    <Compile Include="Implementations\Toast_IOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Services\FileAccessHelper.cs" />
     <Compile Include="Services\iOSSQLitePlatform.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />

@@ -159,6 +159,21 @@
   <data name="AppLiteral3" xml:space="preserve">
     <value>Ingrese su texto aquí...</value>
   </data>
+  <data name="AppLiteral4" xml:space="preserve">
+    <value>Presione atrás</value>
+  </data>
+  <data name="AppLiteral5" xml:space="preserve">
+    <value>veces más para salir de la aplicación.</value>
+  </data>
+  <data name="AppLiteral6" xml:space="preserve">
+    <value>Entrada agregada...</value>
+  </data>
+  <data name="AppLiteral7" xml:space="preserve">
+    <value>Entrada eliminada...</value>
+  </data>
+  <data name="AppLiteral8" xml:space="preserve">
+    <value>Entrada actualizada...</value>
+  </data>
   <data name="EditItemLiteral1" xml:space="preserve">
     <value>Desea actualizar la entrada?</value>
   </data>
@@ -224,6 +239,48 @@
   </data>
   <data name="LoginLiteral7" xml:space="preserve">
     <value>Toque la imágen de la huella</value>
+  </data>
+  <data name="OptionsLiteral1" xml:space="preserve">
+    <value>Copia y respaldo</value>
+  </data>
+  <data name="OptionsLiteral10" xml:space="preserve">
+    <value>Respaldo restaurado satisfactoriamente.</value>
+  </data>
+  <data name="OptionsLiteral11" xml:space="preserve">
+    <value>Error intentando restaurar el respaldo.</value>
+  </data>
+  <data name="OptionsLiteral12" xml:space="preserve">
+    <value>Desea realizar una copia de seguridad, esta opción sobrescribirá una copia de seguridad anterior?</value>
+  </data>
+  <data name="OptionsLiteral13" xml:space="preserve">
+    <value>Desea restaurar una copia de seguridad, esta opción sobrescribirá los datos actuales?</value>
+  </data>
+  <data name="OptionsLiteral14" xml:space="preserve">
+    <value>Esta operación hace y restaura una copia de seguridad en el almacenamiento externo, carpeta descargas.</value>
+  </data>
+  <data name="OptionsLiteral2" xml:space="preserve">
+    <value>Crear un respaldo:</value>
+  </data>
+  <data name="OptionsLiteral3" xml:space="preserve">
+    <value>RESPALDO</value>
+  </data>
+  <data name="OptionsLiteral4" xml:space="preserve">
+    <value>Restaurar un respaldo:</value>
+  </data>
+  <data name="OptionsLiteral5" xml:space="preserve">
+    <value>RESTAURAR</value>
+  </data>
+  <data name="OptionsLiteral6" xml:space="preserve">
+    <value>La memoria externa no puede ser leida o escrita, conceda permisos a la aplicación en las configuraciones del SO.</value>
+  </data>
+  <data name="OptionsLiteral7" xml:space="preserve">
+    <value>Respaldo creado satisfactoriamente.</value>
+  </data>
+  <data name="OptionsLiteral8" xml:space="preserve">
+    <value>Error intentando crear el respaldo.</value>
+  </data>
+  <data name="OptionsLiteral9" xml:space="preserve">
+    <value>Archivo de respaldo inexistente, nada que restaurar.</value>
   </data>
   <data name="RegisterLiteral1" xml:space="preserve">
     <value>Ingrese una nueva contraseña.</value>

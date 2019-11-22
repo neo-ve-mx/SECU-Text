@@ -159,6 +159,21 @@
   <data name="AppLiteral3" xml:space="preserve">
     <value>Digite seu texto aqui...</value>
   </data>
+  <data name="AppLiteral4" xml:space="preserve">
+    <value>Pressione o botão Voltar</value>
+  </data>
+  <data name="AppLiteral5" xml:space="preserve">
+    <value>vezes mais para sair do aplicativo.</value>
+  </data>
+  <data name="AppLiteral6" xml:space="preserve">
+    <value>Entrada adicionada...</value>
+  </data>
+  <data name="AppLiteral7" xml:space="preserve">
+    <value>Entrada excluída...</value>
+  </data>
+  <data name="AppLiteral8" xml:space="preserve">
+    <value>Entrada atualizada...</value>
+  </data>
   <data name="EditItemLiteral1" xml:space="preserve">
     <value>Deseja atualizar a entrada?</value>
   </data>
@@ -224,6 +239,48 @@
   </data>
   <data name="LoginLiteral7" xml:space="preserve">
     <value>Toque na imagem da impressão digital</value>
+  </data>
+  <data name="OptionsLiteral1" xml:space="preserve">
+    <value>Copia de segurança e restauração</value>
+  </data>
+  <data name="OptionsLiteral10" xml:space="preserve">
+    <value>Copia de segurança restaurado com sucesso.</value>
+  </data>
+  <data name="OptionsLiteral11" xml:space="preserve">
+    <value>Erro ao tentar restaurar o copia de segurança.</value>
+  </data>
+  <data name="OptionsLiteral12" xml:space="preserve">
+    <value>Deseja fazer um copia de segurança, essa opção substituirá um copia de segurança anterior?</value>
+  </data>
+  <data name="OptionsLiteral13" xml:space="preserve">
+    <value>Deseja restaurar um copia de segurança, essa opção substituirá os dados atuais?</value>
+  </data>
+  <data name="OptionsLiteral14" xml:space="preserve">
+    <value>Esta operação faz e restaura um copia de seguranç no armazenamento externo, pasta de downloads.</value>
+  </data>
+  <data name="OptionsLiteral2" xml:space="preserve">
+    <value>Faça um copia de segurança:</value>
+  </data>
+  <data name="OptionsLiteral3" xml:space="preserve">
+    <value>CÓPIA DE SEGURANÇA</value>
+  </data>
+  <data name="OptionsLiteral4" xml:space="preserve">
+    <value>Restaure um copia de segurança:</value>
+  </data>
+  <data name="OptionsLiteral5" xml:space="preserve">
+    <value>RESTAURAR</value>
+  </data>
+  <data name="OptionsLiteral6" xml:space="preserve">
+    <value>A memória externa não pode ser lida ou gravada, conceda permissões ao aplicativo nas configurações do SO.</value>
+  </data>
+  <data name="OptionsLiteral7" xml:space="preserve">
+    <value>Copia de segurança criado com sucesso.</value>
+  </data>
+  <data name="OptionsLiteral8" xml:space="preserve">
+    <value>Erro ao tentar criar copia de segurança.</value>
+  </data>
+  <data name="OptionsLiteral9" xml:space="preserve">
+    <value>Arquivo de copia de segurança inexistente, nada para restaurar.</value>
   </data>
   <data name="RegisterLiteral1" xml:space="preserve">
     <value>Insira uma nova senha.</value>

@@ -1,10 +1,6 @@
 ﻿using SECU_Text.Models;
 using SECU_Text.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -31,7 +27,8 @@ namespace SECU_Text.Views
             var page = (Page)Activator.CreateInstance(item.TargetType);
             page.Title = item.Title;
 
-            Detail = new NavigationPage(page);
+            //Detail = new NavigationPage(page);
+            Application.Current.MainPage.Navigation.PushAsync(page);
             IsPresented = false;
 
             MasterPage.ListViewMasterPage.SelectedItem = null;
